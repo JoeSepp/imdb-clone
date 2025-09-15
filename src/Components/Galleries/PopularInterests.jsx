@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import NextArrow from "../Arrows/NextArrow.jsx";
 import PrevArrow from "../Arrows/PrevArrow.jsx";
-import CategoryCard from "./CategoryCard.jsx";
+import CategoryCard from "../Cards/CategoryCard.jsx";
 import categoryData from "../../Data/categoryData.js"
 import "../../Styles/Galleries/PopularInterests.css"
 

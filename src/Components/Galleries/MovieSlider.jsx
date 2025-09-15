@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import NextArrow from "../Arrows/NextArrow.jsx";
 import PrevArrow from "../Arrows/PrevArrow.jsx";
 import LoadingComponent from "../LoadingComponent.jsx";
-import MovieCardComponent from "./MovieCardComponent.jsx";
+import MovieCardComponent from "../Cards/MovieCardComponent.jsx";
 import "../../Styles/Galleries/MovieSlider.css"
 
 function MovieSlider(props) {

@@ -3,7 +3,7 @@ import Slider from "react-slick"
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "../../Styles/Galleries/PeopleSlider.css"
-import ActorProfile from "./ActorProfile";
+import ActorProfile from "../Cards/ActorProfile.jsx";
 import NextArrow from "../Arrows/NextArrow.jsx";
 import PrevArrow from "../Arrows/PrevArrow.jsx";
 
