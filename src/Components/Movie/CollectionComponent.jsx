@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import LoadingComponent from "../LoadingComponent";
-import MovieCard from "../MovieCard";
+import MovieCard from "../Cards/MovieCard";
 
 function CollectionComponent({ id, mediaType }) {
 

@@ -1,4 +1,4 @@
-import "../Styles/MovieCard.css"
+import "../../Styles/CelebHero.css"
 import { Link } from "react-router-dom"
 
 function MovieCard(props) {

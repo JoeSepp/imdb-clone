@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import LoadingComponent from "../LoadingComponent";
-import MovieCard from "../MovieCard";
+import MovieCard from "../Cards/MovieCard";
 import "../../Styles/Movie/SimilarMovies.css"
 
 

@@ -4,7 +4,7 @@ import { Vibrant } from "node-vibrant/worker";
 import LoadingComponent from "../LoadingComponent";
 import MoviePage from "./MoviePage.jsx";
 import TVPage from "./TVPage.jsx";
-import ActorCard from "../ActorCard.jsx";
+import ActorCard from "../Cards/ActorCard.jsx"
 
 import "../../Styles/Movie/MovieHero.css"
 

@@ -1,4 +1,4 @@
-import ActorCard from "../ActorCard"
+import ActorCard from "../Cards/ActorCard"
 import "../../Styles/Movie/MovieAbout.css"
 import "../../Styles/Movie/TVAbout.css"
 

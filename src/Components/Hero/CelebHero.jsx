@@ -1,9 +1,9 @@
 import { useParams } from "react-router-dom"
 import { useState, useEffect, useTransition } from "react"
-import LoadingComponent from "./LoadingComponent.jsx"
-import MovieCard from "./MovieCard.jsx"
+import LoadingComponent from "../LoadingComponent.jsx"
+import MovieCard from "../Cards/MovieCard.jsx"
 
-import '../Styles/CelebHero.css'
+import '../../Styles/CelebHero.css'
 
 function CelebHero() {
     const { id } = useParams()

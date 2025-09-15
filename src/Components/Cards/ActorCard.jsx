@@ -1,4 +1,4 @@
-import "../Styles/MovieCard.css"
+import "../../Styles/MovieCard.css"
 import { Link } from "react-router-dom"
 
 function ActorCard({profilePath, name, character, id}) {

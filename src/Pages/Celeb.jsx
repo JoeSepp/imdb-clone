@@ -1,6 +1,6 @@
 import Header from "../Components/navbar/Header"
 import Footer from "../Components/Footer.jsx"
-import CelebHero from "../Components/CelebHero.jsx"
+import CelebHero from "../Components/Hero/CelebHero.jsx"
 
 
 function Celeb() {
