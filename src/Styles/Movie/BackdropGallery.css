@@ -1,4 +1,4 @@
-.gallery{
+.gallery {
     margin-top: 50px;
     display: flex;
 
@@ -7,13 +7,13 @@
 }
 
 
-.gallery > h2{
+.gallery>h2 {
     position: relative;
     color: white;
     padding-left: 15px;
 }
 
-.gallery > h2::before{
+.gallery>h2::before {
     content: '';
     position: absolute;
     left: 0;
@@ -24,11 +24,65 @@
     background-color: rgb(255, 208, 0);
 }
 
-.backdrop-slick{
+.backdrop-slick {
     width: 920px;
 }
 
 
-.backdrop-image-gallery{
+.backdrop-image-gallery {
     width: 280px;
+    cursor: pointer;
+}
+
+
+/* EXPANDED GALLERY */
+
+.backdrop-slick-expanded {
+    max-width: 1200px;
+}
+
+.gallery-expanded {
+    position: fixed;
+
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    padding-top: 10vh;
+    padding-left: 350px;
+
+    background-color: rgba(128, 128, 128, 0.473);
+    backdrop-filter: blur(10px);
+
+    z-index: 100;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.close-button{
+    position: absolute;
+    top: 100px;
+    left: 78%;
+    text-align: center;
+    width: 30px;
+
+    z-index: 1;
+
+    padding: 5px;
+    border-radius: 25px;
+    background-color: black;
+}
+
+.close-button:hover{
+    background-color: gray;
+}
+
+.fully-expanded{
+    width: 1200px;
+}
+
+.close-button {
+    cursor: pointer;
 }

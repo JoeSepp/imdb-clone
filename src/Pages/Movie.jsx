@@ -15,7 +15,6 @@ function Movie() {
             </div>
             <div className="movie">
                 <MediaPage />
-                {/* {(hasCollection && movieId) && <CollectionComponent id={movieId} mediaType={mediaType} />} */}
             </div>
             <div>
                 <Footer />

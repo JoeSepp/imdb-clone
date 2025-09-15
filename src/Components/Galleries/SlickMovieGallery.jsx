@@ -3,13 +3,15 @@ import BackdropGallery from "../Galleries/BackdropGallery"
 import LoadingComponent from "../LoadingComponent"
 import NextArrow from "../Arrows/NextArrow"
 import PrevArrow from "../Arrows/PrevArrow"
-import { useEffect, useState } from "react"
+import { useEffect, useState} from "react"
 import { useParams } from "react-router-dom"
 
 function SlickMovieGallery() {
     const { mediaType, id } = useParams()
     const [gallery, setGallery] = useState([])
     const [loading, setLoading] = useState(true)
+    const [expanded, setExpanded] = useState(false)
+
 
     const options = {
         method: 'GET',
@@ -21,12 +23,24 @@ function SlickMovieGallery() {
 
     const settings = {
         className: "backdrop-slick",
-        lazyLoad: true,
+        lazyLoad: false,
         infinite: true,
         speed: 800,
         draggable: false,
         slidesToShow: 3,
         slidesToScroll: 3,
+        nextArrow: <NextArrow />,
+        prevArrow: <PrevArrow />
+    }
+
+    const expadedSettings = {
+        className: "backdrop-slick-expanded",
+        lazyLoad: false,
+        infinite: true,
+        speed: 800,
+        draggable: false,
+        slidesToShow: 1,
+        slidesToScroll: 1,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />
     }
@@ -47,23 +61,45 @@ function SlickMovieGallery() {
 
 
 
+
+    function handleSetExpanded(e) {
+        if (expanded) {
+            setExpanded(false)
+        } else {
+            setExpanded(true)
+   
+        }
+    }
+
     if (loading) {
         return <LoadingComponent />
     }
-    
+
+
+
+    if (expanded) {
+        return (
+            <section className="gallery-expanded">
+                <span className="close-button" onClick={handleSetExpanded}>X</span>
+                <Slider {...expadedSettings} >
+                    {gallery.map((image) => {
+                        return <BackdropGallery imgSrc={image.file_path} expanded={expanded} setExpanded={setExpanded} />
+                    })}
+                </Slider>
+            </section>
+        )
+    }
+
     return (
         <section className="gallery">
             <h2>Gallery</h2>
             <Slider {...settings}>
-                {gallery.map((image) => {
-                    return <BackdropGallery imgSrc={image.file_path} />
+                {gallery.map((image, index) => {
+                    return <BackdropGallery imgSrc={image.file_path} index={index} handleSetExpanded={handleSetExpanded} />
                 })}
             </Slider>
         </section>
     )
-
-
-
 }
 
 export default SlickMovieGallery
