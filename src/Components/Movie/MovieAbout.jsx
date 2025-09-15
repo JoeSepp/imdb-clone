@@ -14,8 +14,6 @@ function MovieAbout({ cast, details }) {
         return USDollar.format(amount)
     }
 
-    console.log(details)
-
     return (
         <section className="movie-about-section-grid">
             <div className="cast-crew-flex">

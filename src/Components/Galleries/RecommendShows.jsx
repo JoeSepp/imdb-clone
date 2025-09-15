@@ -37,9 +37,6 @@ function RecommendShows() {
             .catch(err => console.error(err));
     }, [id])
 
-
-    console.log(recommendations)
-
     return (
         <section className="gallery">
             <h2>Recommendations</h2>

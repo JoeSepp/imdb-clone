@@ -5,8 +5,6 @@ import "../../Styles/Movie/TVAbout.css"
 
 function TVAbout({ cast, details }) {
 
-    console.log(details)
-
     function getSeasonRating(count) {
         let color;
 

@@ -72,8 +72,6 @@ function CelebHero() {
         return <LoadingComponent />
     }
 
-    console.log(personDetails)
-
     return (
         <section className="celeb-hero-section-flex">
             <div className="personal-info-box">
