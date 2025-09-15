@@ -1,0 +1,165 @@
+.movie-poster-container {
+    position: relative;
+    margin-top: 15px;
+
+    display: flex;
+    flex-direction: column;
+
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    background-color: rgb(26, 26, 26);
+    width: 194px;
+
+    cursor: pointer;
+}
+
+.movie-poster-container>img {
+    height: 287px;
+    width: 194px;
+
+    object-fit: cover;
+    border-top-right-radius: 10px;
+}
+
+.ipc-icon--star-border-inline{
+    margin-left: 3%;
+    transform: scale(0.8);
+    fill:rgb(68, 105, 214);
+    border-radius: 8px;
+    padding: 4px 20px;
+}
+
+.ipc-icon--star-border-inline:hover{
+    background-color: rgb(54,54,54);
+}
+
+.m-rank-flex {
+    display: flex;
+
+    justify-content: start;
+    align-items: center;
+
+    color: rgb(190, 190, 190);
+    font-weight: 700;
+
+    gap: 5px;
+}
+
+.m-rank-flex>svg {
+    color: rgb(245, 197, 24);
+    width: 15px;
+}
+
+.movie-desc-box {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 10px;
+}
+
+.m-header {
+    color: white;
+    font-size: 1rem;
+    text-align: left;
+
+    max-height: 20px;
+    margin-top: 8px;
+    margin-bottom: 50px;
+}
+
+.m-header:hover{
+    text-decoration: underline;
+}
+
+.button-watch-options {
+    background-color: rgb(54, 54, 54);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 0px;
+
+    color: #5799ef;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: background-color 100ms;
+}
+
+.button-watch-options:hover {
+    background-color: #323e4e;
+}
+
+.m-trailer-info {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 25px;
+
+
+    padding-left: 5px;
+    margin-top: 5px;
+    color: white;
+}
+
+.m-trailer-info>button {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+
+    font-weight: 600;
+    border-radius: 25px;
+    padding: 5px 10px;
+
+    cursor: pointer;
+}
+
+.m-trailer-info>button:hover {
+    background-color: rgb(54, 54, 54);
+
+}
+
+.m-trailer-info>button>svg {
+    margin-top: -1px;
+    margin-right: 5px;
+}
+
+.m-trailer-info>svg {
+    padding: 10px;
+    border-radius: 100%;
+
+    cursor: pointer;
+}
+
+.m-trailer-info>svg:hover {
+    background-color: rgb(54, 54, 54);
+}
+
+.ipc-watchlist-ribbon__bg{
+    position: absolute;
+
+    transform: scale(1.3);
+    left: 3px;
+    top: 5px;
+
+    cursor: pointer;
+}
+
+.ipc-watchlist-ribbon__bg-hover{
+    fill: transparent;
+
+    transition: fill 250ms;
+}
+
+.ipc-watchlist-ribbon__bg-hover:hover{
+    fill: rgba(189, 189, 189, 0.596);
+}
+
+.ipc-watchlist-ribbon__bg-shadow{
+    fill: rgba(100, 100, 100, 0.685);
+}
+
+.ipc-watchlist-ribbon__bg-ribbon{
+    fill: rgba(53, 53, 53, 0.699);
+}

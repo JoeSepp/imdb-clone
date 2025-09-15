@@ -1,0 +1,58 @@
+
+.gallery-element-div{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    cursor: pointer;
+
+    transition: opacity 200ms;
+}
+
+.gallery-element-div:hover{
+    opacity: 0.8;
+}
+
+.image-container-div > img {
+    width: 420px;
+    border-radius: 20px;
+}
+
+.image-container-div > span{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left: 4%;
+    bottom: 22%;
+
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+.image-container-div > span > svg {
+    transform: scale(1.2);
+    margin-right: 10px;
+}
+
+.gallery-info-div{
+    display: flex;
+    flex-direction: column;
+
+    align-items: start;
+    padding-left: 15px;
+
+    font-size: 1.1rem;
+    font-weight: 400;
+
+    color: white;
+}
+
+.span-link-list-text{
+    color: rgb(0, 140, 255);
+}
+
+.span-list-heading-text:hover,
+.span-link-list-text:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}

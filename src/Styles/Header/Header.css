@@ -1,0 +1,57 @@
+.nav-header {
+    display: flex;
+    position: relative;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: #1b1b1b;
+    height: 55px;
+    z-index: 10;
+
+    left: 0;
+    right: 0;
+}
+
+.login-section{
+    display: flex;
+    align-items: center;
+}
+
+.login-section>ul {
+    display: flex;
+    text-wrap: no-wrap;
+    list-style: none;
+
+    color: white;
+    font-weight: 500;
+    font-size: 0.9rem;
+
+    margin-left: 10px;
+    padding-left: 7px;
+    border-left: solid 2px rgba(54, 54, 54, 0.815);
+}
+
+.login-box,
+.use-app-box {
+    padding: 5px 13px;
+    transition: background-color 150ms;
+
+    margin-left: 8px;
+    border-radius: 20px;
+
+    cursor: pointer;
+}
+
+.use-app-box {
+    color: black;
+    background-color: rgb(255, 208, 0);
+}
+
+.login-box:hover {
+    background-color: rgba(78, 78, 78, 0.363);
+}
+
+.use-app-box:hover {
+    background-color: rgb(189, 154, 0);
+}

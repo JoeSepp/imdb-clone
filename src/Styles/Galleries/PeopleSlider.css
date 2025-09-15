@@ -1,0 +1,64 @@
+.people-gallery-container{
+    margin-top: 50px;
+
+    display: flex;
+    flex-direction: column;    
+}
+
+.actors-slick {
+    width: 1250px;
+}
+
+.actor-slider-container{
+    display: flex;
+    text-align: left;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+}
+
+.container-header{
+    position: relative;
+
+    font-size: 1.4rem;
+    text-align: left;
+    font-weight: 700;
+
+    color: white;
+
+    margin-bottom: 10px;
+    padding-left: 15px;
+
+    display: flex;
+    align-items: center;
+
+
+    cursor: pointer;
+}
+
+.container-header::before{
+    content: '';
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+    left: 0;
+    width: 4px;
+    z-index: 1;
+    background-color: rgb(245, 197, 24);
+    
+    border-radius: 10px;
+}
+
+.container-header > svg {
+    width: 17px;
+    margin-left: 10px;
+}
+
+.people-gallery-heading{
+    font-size: 0.8rem;
+    color: rgb(245, 197, 24);
+    letter-spacing: 1px;
+    font-weight: 500;
+
+    margin-bottom: 10px;
+}

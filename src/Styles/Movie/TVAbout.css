@@ -1,0 +1,15 @@
+
+.seasons-ul{
+    position: absolute;
+    color: white;
+    font-size: 0.9rem;
+    font-style: italic;
+
+    list-style:square;
+
+    margin-left: 15px;
+    padding: 0;
+}
+
+
+

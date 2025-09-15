@@ -1,0 +1,28 @@
+.movie-gallery-container{
+    margin-bottom: 100px;
+    justify-content: start;
+    align-items: start;
+
+    /* background-color: rgb(12, 12, 12); */
+}
+
+.header-subtext{
+    display: block;
+
+    font-size: 1.1rem;
+    color: gray;
+    font-weight: 500;
+
+
+    text-align: left;
+    margin-bottom: 15px;
+    margin-top: -10px;
+}
+
+.movies-slick{
+    width: 1250px;
+}
+
+.movies-slick > div{
+    width: 1250px;
+}

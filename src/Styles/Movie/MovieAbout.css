@@ -1,0 +1,151 @@
+.movie-about-section-grid {
+    display: grid;
+
+    grid-template-columns: 700px auto;
+    grid-template-rows: auto;
+
+    grid-template-areas:
+        "cast cast info"
+        "review review info";
+
+    padding-right: 350px;
+    margin-top: 50px;
+
+    color: white;
+}
+
+.cast-crew-flex {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 900px;
+
+    text-align: left;
+    justify-content: center;
+    grid-area: cast;
+}
+
+.cast-crew-flex>h2 {
+    position: relative;
+
+    padding-left: 15px;
+}
+
+.cast-crew-flex>h2::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    top: 0;
+    width: 3px;
+
+    background-color: rgb(255, 208, 0);
+}
+
+.cast-crew-flex>div {
+    display: flex;
+
+    min-height: 320px;
+
+    gap: 20px;
+    padding: 10px;
+
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+
+.cast-crew-flex>div::-webkit-scrollbar-thumb {
+    background: rgb(56, 56, 56);
+    border: 4px solid rgb(16, 16, 16);
+    border-radius: 10px;
+    background-clip: content-box;
+}
+
+.cast-crew-flex>div::-webkit-scrollbar-track {
+    background: rgb(16, 16, 16);
+    border-radius: 10px;
+}
+
+.cast-crew-flex>div::-webkit-scrollbar {
+    height: 15px;
+}
+
+.movie-info {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: start;
+    align-items: start;
+    text-align: left;
+
+    gap: 20px;
+
+    grid-area: info;
+}
+
+.movie-info>div>h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    position: relative;
+}
+
+.movie-info>div>h3::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    top: 0;
+    width: 3px;
+
+    background-color: rgb(255, 208, 0);
+}
+
+.movie-info>div>span {
+    font-size: 0.9rem;
+    font-style: italic;
+}
+
+.reviews-section {
+    margin-top: 35px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    text-align: left;
+
+    position: relative;
+    max-width: 900px;
+
+    grid-area: review;
+}
+
+.reviews-section::before,
+.reviews-section::after {
+    position: absolute;
+    content: '';
+    left: 0;
+    right: 0;
+    height: 1px;
+
+    background-color: rgba(255, 255, 255, 0.486);
+
+}
+
+.reviews-section>h3 {
+    position: relative;
+    color: white;
+    font-size: 1.6rem;
+
+    padding-left: 15px;
+}
+
+.reviews-section>h3::before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    top: 0;
+    width: 3px;
+
+    background-color: rgb(255, 208, 0);
+}

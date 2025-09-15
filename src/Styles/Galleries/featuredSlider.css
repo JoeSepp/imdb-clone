@@ -1,0 +1,27 @@
+.featured-slider {
+    width: 850px;
+
+
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 1000ms;
+    animation-delay: 600ms;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+.slick-slide>div {
+    margin-right: 5px;
+}
+
+@keyframes fadeIn {
+    0% {
+        transform: translateX(-200px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

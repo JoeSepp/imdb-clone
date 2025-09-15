@@ -1,0 +1,38 @@
+.hero-content-slider {
+    position: relative;
+    max-width: 890px;
+}
+
+.main-slider-arrow-prev{
+    position: absolute;
+    left: 0;
+    top: 30%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.514);
+    border: 1px solid rgb(143, 143, 143);
+
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.main-slider-arrow-prev:hover,
+.main-slider-arrow-next:hover{
+    color: orange;
+}
+
+.main-slider-arrow-prev > svg,
+.main-slider-arrow-next > svg{
+    padding: 17px 6px;
+}
+
+.main-slider-arrow-next{
+    position: absolute;
+    right: 0;
+    top: 30%;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.514);
+    border: 1px solid rgb(143, 143, 143);
+
+    border-radius: 4px;
+    cursor: pointer;
+}

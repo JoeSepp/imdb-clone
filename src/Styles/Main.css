@@ -1,0 +1,63 @@
+.gallery-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    align-items: start;
+    justify-content: start;
+
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 500ms;
+    animation-delay: 300ms;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+.right-arrow-button {
+    position: absolute;
+    top: 50%;
+    right: 0;
+
+    background-color: rgba(255, 255, 255, 0.349);
+    border: solid 2px white;
+    border-radius: 5px;
+
+    padding: 10px;
+    z-index: 1;
+
+    cursor: pointer;
+}
+
+.gallery-container::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-slider-grid {
+    display: grid;
+    position: relative;
+    grid-template-columns: auto auto auto auto;
+
+    align-items: start;
+    gap: 18px;
+}
+
+.gallery-header {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: rgb(255, 208, 0);
+    text-align: left;
+
+    margin-bottom: 28px;
+}
+
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

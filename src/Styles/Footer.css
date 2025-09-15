@@ -1,0 +1,141 @@
+footer {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 50px;
+
+    gap: 25px;
+}
+
+.btn_sign-in>button {
+    padding: 10px 35px;
+    background-color: rgb(245, 197, 24);
+    color: black;
+
+    border: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    border-radius: 20px;
+
+    cursor: pointer;
+}
+
+.btn_sign-in>button:hover{
+  background-color: rgb(211, 170, 23);  
+}
+
+
+.footer-box-containers {
+    display: flex;
+
+    gap: 20px;
+}
+
+.socials-box {
+    display: flex;
+    flex-direction: column;
+   
+    width: 420px;
+    padding: 17px 0px;
+
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    gap: 12px;
+
+    border: solid 2px rgb(51, 51, 51);
+    border-radius: 15px;
+}
+
+.footer-box-header {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: white;
+}
+
+.socials-box > div {
+    display: flex;
+    gap: 25px;
+}
+
+.socials-box > div > svg {
+    transform: scale(1.1);
+    border-radius: 100%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.socials-box > div > svg:hover{
+    background-color: rgb(16, 16, 16);
+}
+
+.app-qr-box {
+    display: grid;
+    grid-template-columns: 280px auto;
+
+    justify-content:space-evenly;
+    align-items: center;
+
+    width: 420px;
+    padding: 17px 0px;
+
+    
+
+    border: solid 2px rgb(51, 51, 51);
+    border-radius: 15px;
+}
+
+.app-qr-box > div {
+    display: flex;
+    flex-direction: column;
+
+    text-align: left;
+}
+.footer-box-subtext{ 
+    color: gray;
+}
+
+.app-qr-box > img {
+    height: 50px;
+    border: solid 4px white;
+    border-radius: 5px;
+}
+
+.footer-helpful-links > div > ul {
+    list-style: none;
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    color: white;
+
+    font-size: 1.1rem;
+}
+
+.footer-helpful-links > div > ul > li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 4px;
+
+    cursor: pointer;
+}
+
+.footer-helpful-links > div > ul > li:hover{
+    text-decoration: underline;
+}
+
+.footer-helpful-links > div > ul > li > svg {
+    width: 8px;
+}
+
+.cpy-rights {
+    color: rgb(85, 85, 85);
+}

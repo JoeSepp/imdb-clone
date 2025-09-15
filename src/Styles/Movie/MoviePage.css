@@ -1,0 +1,5 @@
+.movie-page-div {
+    display: flex;
+    flex-direction: column;
+}
+

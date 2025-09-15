@@ -1,0 +1,34 @@
+.gallery{
+    margin-top: 50px;
+    display: flex;
+
+    flex-direction: column;
+    align-items: start;
+}
+
+
+.gallery > h2{
+    position: relative;
+    color: white;
+    padding-left: 15px;
+}
+
+.gallery > h2::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    width: 3px;
+
+    background-color: rgb(255, 208, 0);
+}
+
+.backdrop-slick{
+    width: 920px;
+}
+
+
+.backdrop-image-gallery{
+    width: 280px;
+}

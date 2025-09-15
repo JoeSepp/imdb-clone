@@ -1,0 +1,25 @@
+
+.actor-ranking-profile{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+
+    font-size: 1.1rem;
+    font-weight: 400;
+
+    color: white;
+    cursor: pointer;
+}
+
+.actor-ranking-profile:hover{
+    opacity: 0.6;
+}
+
+.actor-ranking-profile > img {
+    width: 194px;
+    height: 194px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+

@@ -1,0 +1,56 @@
+.review-box {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: start;
+    align-items: start;
+
+    text-align: left;
+
+    padding: 25px 40px;
+
+    border: solid 1px gray;
+    border-radius: 15px;
+
+    box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.123);
+
+    margin-bottom: 55px;
+
+    color: white;
+}
+
+.review-box > div:nth-child(1){
+    display: flex;
+    align-items: start;
+    justify-content: center;
+
+    flex-direction: column;
+}
+
+.review-box > div:nth-child(1) > div {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+}
+
+.review-box > div:nth-child(1) > h3 {
+    margin: 0;
+    margin-right: 25px;
+}
+
+.review-box > div:nth-child(1) > div > svg {
+    fill: rgb(255, 208, 0);
+    scale: 0.7;
+}
+
+.review-box > div:nth-child(2) > p{
+    font-style: italic;
+}
+
+.review-box > div:nth-child(2) > span {
+    font-size: 0.6rem;
+    display: block;
+    min-width: 830px;
+
+    text-align: right;
+}

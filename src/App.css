@@ -1,0 +1,22 @@
+#root {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+}
+
+body.hide-scroll{
+  overflow: hidden;
+}
+
+.main, .movie, .celeb {
+  margin:0;
+  padding: 0;
+  margin-left: 320px;
+  padding-top: 8px;
+}
+
