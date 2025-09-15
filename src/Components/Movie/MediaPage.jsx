@@ -84,6 +84,7 @@ function MoviePage() {
     if (prevId !== id) {
         setPrevId(id)
         window.location.reload()
+        window. location.scrollTop()
     }
 
     if (loading) {
