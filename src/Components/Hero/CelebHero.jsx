@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom"
 import { useState, useEffect, useTransition } from "react"
 import LoadingComponent from "../LoadingComponent.jsx"
 import MovieCard from "../Cards/MovieCard.jsx"
+import MediaCredits from "../CelebPage/MediaCredits.jsx"
 
 import '../../Styles/CelebHero.css'
 
@@ -13,6 +14,8 @@ function CelebHero() {
     const [isLoading, setIsLoading] = useState(true);
     const [readMore, setReadMore] = useState("");
     const [prevId, setPrevId] = useState(id)
+    const [list, setList] = useState([])
+    const [yearList, setYearList] = useState([])
 
     const options = {
         method: 'GET',
@@ -30,7 +33,7 @@ function CelebHero() {
                 if (res.biography.length >= 450) {
                     setReadMore("...read more")
                     setBiography(res.biography.slice(0, 450))
-                }else{
+                } else {
                     setBiography(res.biography)
                 }
 
@@ -61,6 +64,21 @@ function CelebHero() {
         }
     }
 
+    useEffect(() => {
+        fetch(`https://api.themoviedb.org/3/person/${id}/movie_credits?language=en-US`, options)
+            .then(res => res.json())
+            .then(res => {
+                setList(res.cast)
+                let years = res.cast.map((show) => {
+                    return show.release_date.slice(0, 4)
+                })
+                let uniq = [...new Set(years)]
+                uniq.sort()
+                uniq.reverse()
+                setYearList(uniq)
+            })
+            .catch(err => console.error(err));
+    }, [id])
 
     if (prevId !== id) {
         setPrevId(id);
@@ -73,34 +91,36 @@ function CelebHero() {
     }
 
     return (
-        <section className="celeb-hero-section-flex">
-            <div className="personal-info-box">
-                <img src={`https://media.themoviedb.org/t/p/w300_and_h450_bestv2/${personDetails.profile_path}`} />
-                <h3>Full name</h3>
-                <span>{personDetails.name}</span>
-                <h3>Birthday</h3>
-                <span>Born {personDetails.birthday}</span>
-                <span>{personDetails.deathday && "Died " + personDetails.deathday}</span>
-                <span>{personDetails.place_of_birth}</span>
-                <h3>Department</h3>
-                <span>{personDetails.known_for_department}</span>
-            </div>
-            <div className="biography-box">
-                <h2>{personDetails.name}</h2>
-                <span className="biography-header">Biography</span>
-                <p>
-                    {biography}
-                </p>
-                <span className="show-more-text" onClick={resizeParagraph}>{readMore}</span>
-                <h3>Known for</h3>
-                <div className="known-for-movies-flex">
-                    {knownForMovies.map((movie, index) => {
-                        return <MovieCard key={index} id={movie.id} poster_path={movie.poster_path} />
-                    })}
+        <>
+            <section className="celeb-hero-section-flex">
+                <div className="personal-info-box">
+                    <img src={`https://media.themoviedb.org/t/p/w300_and_h450_bestv2/${personDetails.profile_path}`} />
+                    <h3>Full name</h3>
+                    <span>{personDetails.name}</span>
+                    <h3>Birthday</h3>
+                    <span>Born {personDetails.birthday}</span>
+                    <span>{personDetails.deathday && "Died " + personDetails.deathday}</span>
+                    <span>{personDetails.place_of_birth}</span>
+                    <h3>Department</h3>
+                    <span>{personDetails.known_for_department}</span>
                 </div>
-            </div>
-
-        </section>
+                <div className="biography-box">
+                    <h2>{personDetails.name}</h2>
+                    <span className="biography-header">Biography</span>
+                    <p>
+                        {biography}
+                    </p>
+                    <span className="show-more-text" onClick={resizeParagraph}>{readMore}</span>
+                    <h3>Known for</h3>
+                    <div className="known-for-movies-flex">
+                        {knownForMovies.map((movie, index) => {
+                            return <MovieCard key={index} id={movie.id} poster_path={movie.poster_path} />
+                        })}
+                    </div>
+                </div>
+            </section>
+            <MediaCredits creditsList={list} type={"movie"} years={yearList}/>
+        </>
     )
 }
 
