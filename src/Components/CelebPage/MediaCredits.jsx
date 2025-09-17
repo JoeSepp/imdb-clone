@@ -29,26 +29,29 @@ function MediaCredits({ creditsList, type, years }) {
             <section className="media-credits">
                 <h2>Movies</h2>
                 {years.map((year, index) => {
+                    if (year === '') {
+                        return
+                    }
                     return (
                         <div key={index}>
                             <h3>{year}</h3>
                             <ul >
                                 {creditsList.map((show, index) => {
                                     if (show.release_date.slice(0, 4) === year) {
-                                        if(show.release_date === ''){
+                                        if (show.release_date === '') {
                                             return
                                         }
 
                                         return (
-                                            <Link key={index}  to={`/${type}/${show.id}`} className="movie-link-router">
-                                            <li style={{ listStyleImage: getRatingColor(show.vote_average) }}>
-                                                <span>
-                                                    {show.original_title}
-                                                    ({show.release_date.slice(0, 4)})
-                                                </span>
-                                            </li>
+                                            <Link key={index} to={`/${type}/${show.id}`} className="movie-link-router">
+                                                <li style={{ listStyleImage: getRatingColor(show.vote_average) }}>
+                                                    <span>
+                                                        {show.original_title}
+                                                        ({show.release_date.slice(0, 4)})
+                                                    </span>
+                                                </li>
                                             </Link>
-                                            )
+                                        )
                                     }
                                 })}
                             </ul>
