@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
 import "../../Styles/Movie/MediaCredits.css"
+import MediaHoverComponent from "./MediaHoverComponent";
+import { useState } from "react"
+
 
 function MediaCredits({ creditsList, type, years }) {
+
+    const [isHovered, setIsHovered] = useState(false)
 
     function getRatingColor(count) {
         let color;
@@ -22,6 +27,16 @@ function MediaCredits({ creditsList, type, years }) {
         color: "white",
         textDecoration: "none"
     }
+
+    function handleMouseOver(e) {
+        if (!isHovered) {
+            document.querySelector(`.div-${e.target.dataset.listid}`).classList.add("display")
+            setIsHovered(true)
+        }
+    }
+
+
+    console.log(creditsList)
 
     if (type === "movie") {
 
@@ -44,13 +59,15 @@ function MediaCredits({ creditsList, type, years }) {
 
                                         return (
                                             <Link key={index} to={`/${type}/${show.id}`} className="movie-link-router">
-                                                <li style={{ listStyleImage: getRatingColor(show.vote_average) }}>
-                                                    <span>
+                                                <li className="movie-ul-list-media" style={{ listStyleImage: getRatingColor(show.vote_average) }}>
+                                                    <span  data-listid={show.id} onMouseEnter={handleMouseOver}>       
                                                         {show.original_title}
                                                         ({show.release_date.slice(0, 4)})
                                                     </span>
+                                                    <MediaHoverComponent id={show.id} title={show.original_title} imgSrc={show.poster_path} setIsHovered={setIsHovered} overview={show.overview}/>
                                                 </li>
                                             </Link>
+                                       
                                         )
                                     }
                                 })}
@@ -63,16 +80,5 @@ function MediaCredits({ creditsList, type, years }) {
     }
 
 }
-
-/*     {creditsList.map((show, index) => {
-                        return (
-                            <li key={index} style={{listStyleImage: getRatingColor(show.vote_average)}}>
-                                <span>
-                                    {show.original_title}
-                                    ({show.release_date.slice(0, 4)})
-                                </span>
-                            </li>
-                        )
-                    })} */
 
 export default MediaCredits

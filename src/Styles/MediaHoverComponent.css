@@ -1,0 +1,36 @@
+.hovered-movie-div{
+    position: absolute;
+
+   background-color:rgb(245, 197, 24);
+    z-index: 1;
+
+    left: 0;
+    top: -20px;
+
+    width: 400px;
+    padding: 15px;
+
+    border-radius: 20px;
+    box-shadow: inset 0px 0px 5px rgb(0, 0, 0);
+
+    display: none;
+}
+
+.display{
+    display: flex;
+    gap: 20px;
+}
+
+.hovered-movie-div > img {
+    height: 150px;
+}
+
+.hovered-movie-div > span > h1 {
+    font-size: 1rem;
+    color: rgb(36, 36, 36);
+}
+
+.hovered-movie-div > span > p {
+    color: rgb(56, 56, 56);
+    font-size: 0.8rem;
+}
