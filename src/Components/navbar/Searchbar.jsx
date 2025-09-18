@@ -2,6 +2,7 @@ import SearchDropdown from "./SearchDropdown"
 import { useState } from "react"
 import FoundMovieComponent from "./foundMovieComponent";
 import "../../Styles/Header/SearchBar.css"
+import LoadingComponent from "../LoadingComponent.jsx"
 
 //const API_KEY = "4ef57d82";
 
@@ -77,7 +78,7 @@ function SearchBar() {
 
 
             <div className="search-result-expanded">
-                {isLoading ? <h1>loading</h1> : movieData.map((movie, index) => {
+                {isLoading ? <LoadingComponent /> : movieData.map((movie, index) => {
                     if (movie.media_type === "tv" || searchType === "tv") {
                         return <FoundMovieComponent image={`https://image.tmdb.org/t/p/w600_and_h900_bestv2/${movie.poster_path}`} title={movie.name} releaseDate={movie.first_air_date} key={index} id={movie.id} mediaType={"tv"} />
                     } else if (movie.known_for_department === "Acting" || searchType === "person") {
