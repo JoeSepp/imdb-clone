@@ -14,8 +14,6 @@ function CelebHero() {
     const [isLoading, setIsLoading] = useState(true);
     const [readMore, setReadMore] = useState("");
     const [prevId, setPrevId] = useState(id)
-    const [list, setList] = useState([])
-    const [yearList, setYearList] = useState([])
 
     const options = {
         method: 'GET',
@@ -64,22 +62,6 @@ function CelebHero() {
         }
     }
 
-    useEffect(() => {
-        fetch(`https://api.themoviedb.org/3/person/${id}/movie_credits?language=en-US`, options)
-            .then(res => res.json())
-            .then(res => {
-                setList(res.cast)
-                let years = res.cast.map((show) => {
-                    return show.release_date.slice(0, 4)
-                })
-                let uniq = [...new Set(years)]
-                uniq.sort()
-                uniq.reverse()
-                setYearList(uniq)
-            })
-            .catch(err => console.error(err));
-    }, [id])
-
     if (prevId !== id) {
         setPrevId(id);
         location.reload()
@@ -119,7 +101,8 @@ function CelebHero() {
                     </div>
                 </div>
             </section>
-            <MediaCredits creditsList={list} type={"movie"} years={yearList}/>
+            <MediaCredits type={"movie"} options={options} />
+            <MediaCredits type={"tv"} options={options} />
         </>
     )
 }
