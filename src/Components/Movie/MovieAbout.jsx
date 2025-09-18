@@ -14,16 +14,18 @@ function MovieAbout({ cast, details }) {
         return USDollar.format(amount)
     }
 
+    console.log(cast.length)
+    
     return (
         <section className="movie-about-section-grid">
-            <div className="cast-crew-flex">
+            {cast.length > 5 && <div className="cast-crew-flex">
                 <h2>Top cast</h2>
                 <div>
-                    {cast && cast.map((actor) => {
+                    {cast.map((actor) => {
                         return <ActorCard key={actor.id} profilePath={actor.profile_path} name={actor.name} id={actor.id} character={actor.character} />
                     })}
                 </div>
-            </div>
+            </div>}
             <div className="movie-info">
                 <div>
                     <h3>Status</h3>

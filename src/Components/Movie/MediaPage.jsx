@@ -95,7 +95,7 @@ function MoviePage() {
     return (
         <div className="movie-page-div">
             <MediaHero details={details} credits={credits} cast={cast} />
-            {mediaType === "movie" ? <MovieAbout cast={cast} details={details} /> : <TVAbout cast={cast} details={details}/>}
+            {mediaType === "movie" && cast? <MovieAbout cast={cast} details={details} /> : <TVAbout cast={cast} details={details}/>}
             <SlickMovieGallery />
             <MovieReviews id={id} mediaType={mediaType} />
             <RecommendShows />
