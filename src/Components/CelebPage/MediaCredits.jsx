@@ -57,15 +57,15 @@ function MediaCredits({ creditsList, type, years }) {
 
                                         return (
                                             <div key={index}>
-                                                <li  className="movie-ul-list-media" style={{ listStyleImage: getRatingColor(show.vote_average) }}>
+                                                <li className="movie-ul-list-media" style={{ listStyleImage: getRatingColor(show.vote_average) }}>
                                                     <Link to={`/${type}/${show.id}`} className="movie-link-router">
                                                         <span>
                                                             {show.original_title}
                                                             ({show.release_date.slice(0, 4)})
                                                         </span>
+                                                        <MediaHoverComponent id={show.id} title={show.original_title} imgSrc={show.poster_path} setIsHovered={setIsHovered} overview={show.overview} />
                                                     </Link>
                                                     <input type="checkbox" data-listid={show.id} onClick={handleMouseClick} />
-                                                    <MediaHoverComponent id={show.id} title={show.original_title} imgSrc={show.poster_path} setIsHovered={setIsHovered} overview={show.overview} />
                                                 </li >
                                             </div>
                                         )
