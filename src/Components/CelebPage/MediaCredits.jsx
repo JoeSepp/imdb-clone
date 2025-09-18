@@ -28,15 +28,13 @@ function MediaCredits({ creditsList, type, years }) {
         textDecoration: "none"
     }
 
-    function handleMouseOver(e) {
+    function handleMouseClick(e) {
         if (!isHovered) {
             document.querySelector(`.div-${e.target.dataset.listid}`).classList.add("display")
+            e.target.checked = false
             setIsHovered(true)
         }
     }
-
-
-    console.log(creditsList)
 
     if (type === "movie") {
 
@@ -58,24 +56,27 @@ function MediaCredits({ creditsList, type, years }) {
                                         }
 
                                         return (
-                                            <Link key={index} to={`/${type}/${show.id}`} className="movie-link-router">
-                                                <li className="movie-ul-list-media" style={{ listStyleImage: getRatingColor(show.vote_average) }}>
-                                                    <span  data-listid={show.id} onMouseEnter={handleMouseOver}>       
-                                                        {show.original_title}
-                                                        ({show.release_date.slice(0, 4)})
-                                                    </span>
-                                                    <MediaHoverComponent id={show.id} title={show.original_title} imgSrc={show.poster_path} setIsHovered={setIsHovered} overview={show.overview}/>
-                                                </li>
-                                            </Link>
-                                       
+                                            <div key={index}>
+                                                <li  className="movie-ul-list-media" style={{ listStyleImage: getRatingColor(show.vote_average) }}>
+                                                    <Link to={`/${type}/${show.id}`} className="movie-link-router">
+                                                        <span>
+                                                            {show.original_title}
+                                                            ({show.release_date.slice(0, 4)})
+                                                        </span>
+                                                    </Link>
+                                                    <input type="checkbox" data-listid={show.id} onClick={handleMouseClick} />
+                                                    <MediaHoverComponent id={show.id} title={show.original_title} imgSrc={show.poster_path} setIsHovered={setIsHovered} overview={show.overview} />
+                                                </li >
+                                            </div>
                                         )
                                     }
                                 })}
                             </ul>
                         </div>
                     )
-                })}
-            </section>
+                })
+                }
+            </section >
         )
     }
 
