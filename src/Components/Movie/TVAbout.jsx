@@ -41,9 +41,9 @@ function TVAbout({ cast, details }) {
                 </div>
                 <div>
                     <h3>Seasons</h3>
-                    <ul className="seasons-ul" style={{listStyleImage: getSeasonRating(details.vote_average)}}>
+                    <ul className="seasons-ul">
                         {details.seasons.map((season, index) => {
-                            return (<li key={index}>
+                            return (<li key={index} style={{listStyleImage: getSeasonRating(season.vote_average)}}>
                                 {season.name} ({season.episode_count} episodes)
                             </li>)
                         })}
