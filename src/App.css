@@ -13,7 +13,7 @@ body.hide-scroll{
   overflow: hidden;
 }
 
-.main, .movie, .celeb {
+.main, .movie, .celeb, .login-hero {
   margin:0;
   padding: 0;
   margin-left: 320px;

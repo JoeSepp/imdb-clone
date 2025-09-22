@@ -1,0 +1,110 @@
+.login-div-box {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    width: 720px;
+    height: 350px;
+
+    margin-left: 250px;
+    margin-top: 120px;
+    margin-bottom: 120px;
+
+    padding: 50px 10px;
+
+    border-radius: 25px;
+
+    border: solid 1px rgb(255, 208, 0);
+
+    color: white;
+}
+
+.login-div-box-left-text {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+.login-div-box-left-text::after {
+    position: absolute;
+    content: '';
+
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 1px;
+
+    background-color: rgba(255, 208, 0, 0.5);
+}
+
+.login-div-box-left-text>span {
+    display: flex;
+    gap: 5px;
+    color: gray;
+}
+
+.login-div-box-left-text>h1 {
+    margin: 0;
+    padding: 0;
+
+    font-size: 1.8rem;
+    text-align: center;
+
+    max-width: 250px;
+}
+
+.account-form {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.account-form>button {
+    outline: none;
+    border: none;
+    border-radius: 5px;
+
+    padding: 5px 15px;
+
+    background-color: rgb(56, 56, 56);
+
+    cursor: pointer;
+}
+
+.account-form > button:hover{
+    background-color: rgb(255, 208, 0);
+    color: rgb(56, 56, 56);
+    transition: background-color 100ms;
+}
+
+.account-form>span {
+    display: flex;
+    flex-direction: column;
+
+    align-items: start;
+    gap: 5px;
+}
+
+.account-form>span>label {
+    color: rgb(56, 56, 56);
+    font-style: italic;
+}
+
+.account-form>span>input {
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.account-form>span>input:focus-visible {
+    outline: none;
+    border: 2px solid rgb(255, 208, 0);
+}
