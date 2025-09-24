@@ -13,7 +13,7 @@
     right: 0;
 }
 
-.login-section{
+.login-section {
     display: flex;
     align-items: center;
 }
@@ -54,4 +54,17 @@
 
 .use-app-box:hover {
     background-color: rgb(189, 154, 0);
+}
+
+@media (max-width: 1400px) and (min-width: 800px) {}
+
+@media (max-width: 600px) {
+    .login-section {
+        display: flex;
+        align-items: center;
+    }
+
+    .login-section {
+        display: none;
+    }
 }

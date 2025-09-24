@@ -94,7 +94,7 @@
 .category-grid-container {
     display: grid;
     grid-template-columns: auto auto auto;
-    grid-template-rows: auto auto ;
+    grid-template-rows: auto auto;
     grid-template-areas:
         "cat1 cat2 cat3"
         "cat1 cat4 cat3"
@@ -165,5 +165,17 @@
 
     100% {
         transform: translateY(-100%)
+    }
+}
+
+@media (max-width: 1400px) and (min-width: 800px) {}
+
+@media (max-width: 800px) {
+    .hamburger-menu {
+        display: none;
+    }
+
+    .header-top-left-menu {
+        display: inline;
     }
 }

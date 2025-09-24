@@ -35,7 +35,7 @@
     animation-fill-mode: forwards;
 }
 
-.rotate-back{
+.rotate-back {
     animation: rotateBack;
     animation-duration: 150ms;
     animation-fill-mode: forwards;
@@ -119,4 +119,14 @@
     100% {
         transform: rotateX(0);
     }
+}
+
+
+@media (max-width: 1400px) and (min-width: 800px) {}
+
+@media (max-width: 800px) {
+    .search-menu-wrapper {
+        display: none;
+    }
+
 }

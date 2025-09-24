@@ -1,4 +1,3 @@
-
 .search-bar {
     position: relative;
     display: flex;
@@ -7,12 +6,13 @@
     height: 33px;
 }
 
-.search-bar > span {
+.search-bar>span {
     display: flex;
     position: relative;
     width: 100%;
 }
-.search-bar > span > svg {
+
+.search-bar>span>svg {
     display: flex;
     position: absolute;
     right: 8px;
@@ -21,7 +21,7 @@
     cursor: pointer;
 }
 
-.navbar__imdbpro-menu-toggle__name{
+.navbar__imdbpro-menu-toggle__name {
     width: 60px;
     padding: 10px 15px;
     margin-left: 10px;
@@ -31,7 +31,7 @@
     cursor: pointer;
 }
 
-.navbar__imdbpro-menu-toggle__name:hover{
+.navbar__imdbpro-menu-toggle__name:hover {
     background-color: rgba(128, 128, 128, 0.199);
 }
 
@@ -83,7 +83,7 @@
     width: 13px;
 }
 
-.search-result-expanded{
+.search-result-expanded {
     position: absolute;
     left: 0%;
     top: 40px;
@@ -96,24 +96,35 @@
     text-align: left;
 }
 
-.search-result-expanded.displayed{
+.search-result-expanded.displayed {
     visibility: visible;
 }
 
-.search-result-expanded > span{
-    color:white;
+.search-result-expanded>span {
+    color: white;
     cursor: pointer;
     margin-left: 10px;
 }
 
-.search-result-expanded > span:hover {
+.search-result-expanded>span:hover {
     text-decoration: underline;
 }
 
-.see-all-results-searchbar{
+.see-all-results-searchbar {
     display: none;
 }
 
-.see-all-results-searchbar.show-more{
+.see-all-results-searchbar.show-more {
     display: inline;
+}
+
+@media (max-width: 1400px) and (min-width: 800px) {
+
+}
+
+@media (max-width: 800px) {
+    .search-box-input {
+        border-radius: 5px;
+        width: 300px;
+    }
 }
