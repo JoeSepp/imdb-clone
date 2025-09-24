@@ -24,7 +24,7 @@ function MovieSlider(props) {
         slidesToShow: 6,
         slidesToScroll: 4,
         nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />
+        prevArrow: <PrevArrow />,
     }
 
     const options = {

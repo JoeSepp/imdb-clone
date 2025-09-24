@@ -16,6 +16,7 @@ function MainSlider({slider, setSlider}) {
         autoplaySpeed: 5000,
         className: "hero-content-slider",
         infinite: true,
+        lazyload: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,

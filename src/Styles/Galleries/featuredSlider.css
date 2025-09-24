@@ -25,3 +25,15 @@
         opacity: 1;
     }
 }
+
+@media (max-width: 1400px) and (min-width: 800px) {
+    .featured-slider {
+        max-width: 88vw;
+    }
+}
+
+@media (max-width: 800px) {
+     .featured-slider {
+        width: 88vw;
+    }
+}

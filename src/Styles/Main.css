@@ -61,3 +61,16 @@
         opacity: 1;
     }
 }
+
+@media (max-width: 1400px) and (min-width: 800px) {
+    .gallery-header{
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 800px) {
+    .gallery-header{
+        font-size: 1.5em;
+    }
+}
+ 

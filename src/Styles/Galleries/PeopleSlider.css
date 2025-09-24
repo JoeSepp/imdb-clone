@@ -1,15 +1,15 @@
-.people-gallery-container{
+.people-gallery-container {
     margin-top: 50px;
 
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
 }
 
 .actors-slick {
     width: 1250px;
 }
 
-.actor-slider-container{
+.actor-slider-container {
     display: flex;
     text-align: left;
     flex-direction: column;
@@ -17,7 +17,7 @@
     justify-content: left;
 }
 
-.container-header{
+.container-header {
     position: relative;
 
     font-size: 1.4rem;
@@ -36,7 +36,7 @@
     cursor: pointer;
 }
 
-.container-header::before{
+.container-header::before {
     content: '';
     position: absolute;
     top: 3px;
@@ -45,20 +45,33 @@
     width: 4px;
     z-index: 1;
     background-color: rgb(245, 197, 24);
-    
+
     border-radius: 10px;
 }
 
-.container-header > svg {
+.container-header>svg {
     width: 17px;
     margin-left: 10px;
 }
 
-.people-gallery-heading{
+.people-gallery-heading {
     font-size: 0.8rem;
     color: rgb(245, 197, 24);
     letter-spacing: 1px;
     font-weight: 500;
 
     margin-bottom: 10px;
+}
+
+@media (max-width: 1400px) and (min-width: 800px) {
+    .actors-slick {
+        max-width: 88vw;
+    }
+
+}
+
+@media (max-width: 800px) {
+    .actors-slick {
+        width: 88vw;
+    }
 }

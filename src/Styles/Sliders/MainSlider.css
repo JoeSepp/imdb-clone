@@ -1,9 +1,9 @@
 .hero-content-slider {
     position: relative;
-    max-width: 890px;
+    max-width: 850px;
 }
 
-.main-slider-arrow-prev{
+.main-slider-arrow-prev {
     position: absolute;
     left: 0;
     top: 30%;
@@ -16,16 +16,16 @@
 }
 
 .main-slider-arrow-prev:hover,
-.main-slider-arrow-next:hover{
+.main-slider-arrow-next:hover {
     color: orange;
 }
 
-.main-slider-arrow-prev > svg,
-.main-slider-arrow-next > svg{
+.main-slider-arrow-prev>svg,
+.main-slider-arrow-next>svg {
     padding: 17px 6px;
 }
 
-.main-slider-arrow-next{
+.main-slider-arrow-next {
     position: absolute;
     right: 0;
     top: 30%;
@@ -35,4 +35,12 @@
 
     border-radius: 4px;
     cursor: pointer;
+}
+
+@media (max-width: 1400px) {
+    .hero-content-slider {
+        position: relative;
+        min-width: 5%;
+        max-width: 88vw;
+    }
 }

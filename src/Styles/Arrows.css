@@ -31,7 +31,18 @@
     cursor: pointer;
 }
 
-.next-arrow-cstm-slick > svg:hover,
-.prev-arrow-cstm-slick > svg:hover{
+.next-arrow-cstm-slick>svg:hover,
+.prev-arrow-cstm-slick>svg:hover {
     color: rgb(255, 208, 0);
 }
+
+@media (max-width: 1400px){
+
+    .prev-arrow-cstm-slick>svg,
+    .next-arrow-cstm-slick>svg {
+        padding: 10px 0px;
+        transform: scale(0.8);
+    }
+}
+
+@media (max-width: 800px) {}

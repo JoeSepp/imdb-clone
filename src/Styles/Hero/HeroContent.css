@@ -1,6 +1,8 @@
 .current-hero-label {
     position: relative;
     border-radius: 15px;
+
+    display: flex;
 }
 
 .hero-image {
@@ -58,6 +60,8 @@
     color: white;
     line-height: 39px;
     margin: 0;
+
+    font-size: 2em;
 }
 
 .label-text-area>h2 {
@@ -99,4 +103,50 @@
     font-size: 1.1rem;
 
     color: rgb(165, 165, 165);
+}
+
+@media (max-width: 1200px) and (min-width: 800px) {
+    .hero-image {
+        min-width: 88vw;
+    }
+
+    .hero-poster {
+        width: 25vh;
+        border-radius: 20px;
+    }
+
+    .label-text-area>h1 {
+        font-size: 1.5em;
+    }
+
+
+}
+
+@media (max-width: 800px) {
+    .hero-image {
+        min-width: 88vw;
+    }
+
+    .hero-poster {
+        width: 0;
+    }
+
+    .label-text-area>h1,
+    .label-text-area>h2 {
+        font-size: 1em;
+        margin: 0;
+        padding: 0;
+    }
+
+    .sc-809ef538-5 {
+        transform: scale(2);
+    }
+
+    .label-text-area {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+
+    text-overflow: ellipsis;
+}
 }
