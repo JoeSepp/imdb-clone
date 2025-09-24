@@ -12,11 +12,11 @@
 .movie-hero-section::before {
     content: '';
     position: absolute;
-    background-image: linear-gradient(90deg, rgb(16, 16, 16) 35%, rgba(16, 16, 16, 0.281), rgba(16, 16, 16, 0.712));
+    background-image: linear-gradient(90deg, rgb(16, 16, 16) 45%, rgba(16, 16, 16, 0.281), rgba(16, 16, 16, 0.712));
     height: 550px;
 
     z-index: 1;
-    left: -320px;
+    left: -520px;
     right: 0;
 
     
@@ -26,7 +26,7 @@
 .backdrop-image {
     object-fit: cover;
     object-position: 50px -50px;
-    margin-left: 50px;
+    margin-left: 150px;
     max-width: 1920px;
 
     overflow: hidden;

@@ -21,8 +21,6 @@ body.hide-scroll {
   padding: 0;
   margin-left: 23%;
   padding-top: 8px;
-
-  display: flex;
 }
 
 @media (max-width: 1400px) {
@@ -35,6 +33,5 @@ body.hide-scroll {
     margin-left: 5%;
     padding-top: 8px;
 
-    display: flex;
   }
 }
