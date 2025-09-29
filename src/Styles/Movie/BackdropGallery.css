@@ -26,6 +26,7 @@
 
 .backdrop-slick {
     width: 920px;
+    padding-left: 25px;
 }
 
 
@@ -61,7 +62,7 @@
     flex-direction: column;
 }
 
-.close-button{
+.close-button {
     position: absolute;
     top: 100px;
     left: 78%;
@@ -75,14 +76,26 @@
     background-color: black;
 }
 
-.close-button:hover{
+.close-button:hover {
     background-color: gray;
 }
 
-.fully-expanded{
+.fully-expanded {
     width: 1200px;
 }
 
 .close-button {
     cursor: pointer;
+}
+
+@media (max-width:930px) {
+    .backdrop-slick {
+        width: 750px;
+    }
+}
+
+@media (max-width:700px) {
+    .backdrop-slick {
+        width: 430px;
+    }
 }

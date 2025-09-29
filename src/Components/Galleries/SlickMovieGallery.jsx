@@ -33,7 +33,24 @@ function SlickMovieGallery() {
         slidesToShow: 3,
         slidesToScroll: 3,
         nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />
+        prevArrow: <PrevArrow />,
+        responsive: [
+            {
+                breakpoint: 700,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                    centerMode: true
+                }
+            },
+            {
+                breakpoint: 930,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            }
+        ]
     }
 
     useEffect(() => {
@@ -60,7 +77,7 @@ function SlickMovieGallery() {
             <h2>Gallery</h2>
             <Slider {...settings}>
                 {gallery.map((image, index) => {
-                    return <BackdropGallery imgSrc={image.file_path}/>
+                    return <BackdropGallery imgSrc={image.file_path} />
                 })}
             </Slider>
         </section>
