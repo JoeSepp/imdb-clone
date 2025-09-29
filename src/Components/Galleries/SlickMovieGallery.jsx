@@ -27,8 +27,8 @@ function SlickMovieGallery() {
         className: "backdrop-slick",
         lazyLoad: false,
         infinite: true,
-        speed: 800,
-        draggable: false,
+        speed: 200,
+        draggable: true,
         cssEase: 'ease-in-out',
         slidesToShow: 3,
         slidesToScroll: 3,
@@ -39,15 +39,13 @@ function SlickMovieGallery() {
                 breakpoint: 700,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1,
                     centerMode: true
                 }
             },
             {
                 breakpoint: 930,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
+                    slidesToShow: 2
                 }
             }
         ]

@@ -15,10 +15,20 @@ function FeaturedSlider(props) {
         className: "featured-slider",
         infinite: false,
         speed: 550,
-        slidesToShow:2,
+        slidesToShow: 2,
         slidesToScroll: 1,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
+        mobileFirst: true,
+        responsive: [
+            {
+                breakpoint: 700,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                }
+            }
+        ]
     }
 
     return (

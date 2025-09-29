@@ -10,7 +10,7 @@ import "../../Styles/Galleries/MovieSlider.css"
 
 function MovieSlider(props) {
 
-    const { header, subtext, sliderType, ranked} = props
+    const { header, subtext, sliderType, ranked } = props
 
     const [movies, setMovies] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
@@ -18,13 +18,44 @@ function MovieSlider(props) {
     const settings = {
         className: "movies-slick",
         speed: 500,
-        lazyLoad: true,
+        lazyLoad: false,
         infinite: false,
-        draggable: false,
+        draggable: true,
         slidesToShow: 6,
         slidesToScroll: 4,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
+        responsive: [
+            {
+                breakpoint: 700,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2
+                }
+            },
+             {
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3
+                }
+            },
+            {
+                breakpoint: 1100,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4
+                }
+            },
+            {
+                breakpoint: 1400,
+                settings: {
+                    slidesToShow: 5,
+                    slidesToScroll: 5
+                }
+            }
+
+        ]
     }
 
     const options = {
@@ -38,16 +69,16 @@ function MovieSlider(props) {
     useEffect(() => {
         const response = fetch(props.api, options)
             .then(res => res.json())
-            .then(res =>{
+            .then(res => {
                 setMovies(res.results)
-                setTimeout(()=>{
+                setTimeout(() => {
                     setIsLoading(false)
                 }, 1000)
             })
             .catch(err => console.error(err))
     }, [])
 
-    if(isLoading){
+    if (isLoading) {
         return <LoadingComponent />
     }
 
@@ -62,7 +93,7 @@ function MovieSlider(props) {
                 <Slider {...settings}>
                     {movies.map((movie, index) => {
                         return (<div key={movie.id}>
-                            <MovieCardComponent id={movie.id} movieTitle={movie.title} movieRating={movie.vote_average} moviePoster={movie.poster_path} showName={movie.name} ranked={ranked} rank={index + 1} mediaType={movie.media_type}/>
+                            <MovieCardComponent id={movie.id} movieTitle={movie.title} movieRating={movie.vote_average} moviePoster={movie.poster_path} showName={movie.name} ranked={ranked} rank={index + 1} mediaType={movie.media_type} />
                         </div>)
                     })}
                 </Slider>

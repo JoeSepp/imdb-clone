@@ -1,5 +1,4 @@
-
-.actor-ranking-profile{
+.actor-ranking-profile {
     display: flex;
     flex-direction: column;
 
@@ -12,14 +11,22 @@
     cursor: pointer;
 }
 
-.actor-ranking-profile:hover{
+.actor-ranking-profile:hover {
     opacity: 0.6;
 }
 
-.actor-ranking-profile > img {
+.actor-ranking-profile>img {
     width: 194px;
     height: 194px;
     border-radius: 100%;
     object-fit: cover;
 }
 
+@media (max-width: 700px) {
+    .actor-ranking-profile>img {
+        width: 140px;
+        height: 140px;
+        border-radius: 100%;
+        object-fit: cover;
+    }
+}
