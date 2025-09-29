@@ -19,14 +19,12 @@
     left: -520px;
     right: 0;
 
-    
-    box-shadow: 1px 1px 25px rgb(36, 36,36);
+
+    box-shadow: 1px 1px 25px rgb(36, 36, 36);
 }
 
 .backdrop-image {
     object-fit: cover;
-    object-position: 50px -50px;
-    margin-left: 150px;
     max-width: 1920px;
 
     overflow: hidden;
@@ -37,6 +35,9 @@
     z-index: 1;
     top: 8%;
 
+    height: 50vh;
+
+
     display: flex;
 
     opacity: 0;
@@ -45,6 +46,7 @@
 
 .movie-details-container>img {
     border-radius: 25px;
+    width: auto;
 }
 
 .movie-details {
@@ -163,10 +165,10 @@
     margin-bottom: 1080px;
 }
 
-.more-movies-from-collection{
+.more-movies-from-collection {
     position: relative;
 
-    margin-top:  15px;
+    margin-top: 15px;
     margin-right: 350px;
     display: grid;
     text-align: center;
@@ -176,13 +178,13 @@
     max-width: 900px;
 }
 
-.more-movies-from-collection > h3 {
+.more-movies-from-collection>h3 {
     font-size: 1.7rem;
     letter-spacing: 1px;
     color: white;
 }
 
-.more-movies-from-collection::before{
+.more-movies-from-collection::before {
     position: absolute;
     z-index: -1;
     content: '';
@@ -193,42 +195,42 @@
 }
 
 
-.more-movies-from-collection > div{
+.more-movies-from-collection>div {
     display: flex;
     flex-direction: row;
     gap: 30px;
 }
 
-.movie-details-credits-cast{
+.movie-details-credits-cast {
     display: flex;
     flex-direction: column;
     color: white;
 }
 
-.movie-details-credits-cast > h3{
+.movie-details-credits-cast>h3 {
     margin-bottom: 5px;
     margin-top: 0px;
 }
 
-.movie-details-credits-cast > div {
+.movie-details-credits-cast>div {
     display: flex;
     gap: 15px;
 }
 
-.cast-info{
+.cast-info {
     display: flex;
     flex-direction: column;
 }
 
-.cast-name{
+.cast-name {
     cursor: pointer;
 }
 
-.cast-name:hover{
+.cast-name:hover {
     text-decoration: underline;
 }
 
-.character{
+.character {
     font-size: 0.7rem;
     font-style: italic;
     color: gray;
@@ -256,4 +258,127 @@
         transform: translateY(0);
         opacity: 1;
     }
+}
+
+@media (max-width: 1100px) {
+
+    .movie-details-container {
+        height: 40vh;
+    }
+
+    .movie-details-overview>h3 {
+        margin-top: 7px;
+        font-size: 1rem;
+    }
+
+    .movie-details-header>h2 {
+        font-size: 1.3rem;
+    }
+
+    .movie-details-header>span {
+        font-size: 1.3rem;
+
+    }
+
+    .movie-hero-section::before {
+        content: '';
+        position: absolute;
+        display: flex;
+        background-image: linear-gradient(90deg, rgb(16, 16, 16) 45%, rgba(16, 16, 16, 0.281), rgba(16, 16, 16, 0.712));
+
+        height: 100%;
+
+        z-index: 1;
+        left: -520px;
+        right: 0;
+    }
+
+
+    .movie-details-ranking-div {
+        position: relative;
+        margin-top: 12px;
+
+        text-align: center;
+    }
+
+
+    .rank-percent {
+        position: relative;
+        font-size: 1.4rem;
+        background-color: rgb(56, 56, 56);
+        padding: 5px 10px;
+        border-radius: 100%;
+
+        text-align: center;
+
+        color: white;
+        font-weight: 600;
+    }
+
+    .rank-percent::before {
+        position: absolute;
+        content: '%';
+        font-size: 0.5rem;
+
+        right: 8%;
+        top: 25%;
+    }
+
+    .rank-percent::after {
+        position: absolute;
+        content: '';
+        background-color: rgb(56, 56, 56);
+        left: -7px;
+        right: -7px;
+        top: -7px;
+        bottom: -7px;
+
+        z-index: -2;
+        border-radius: 100%;
+    }
+
+    .rating-circle {
+        position: absolute;
+        left: -3px;
+        right: -3px;
+        top: -7px;
+        bottom: -5px;
+        border-radius: 100%;
+        z-index: -1;
+    }
+
+}
+
+@media (max-width: 700px) {
+    .movie-details-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "img details"
+            "details details";
+    }
+
+    .movie-details-container>img {
+        height: 250px;
+        grid-area: "img";
+    }
+
+    .movie-details {
+        grid-area: "details";
+    }
+
+    .backdrop-image {
+        display: none;
+    }
+
+    .movie-hero-section {
+        display: grid;
+
+        grid-template-areas:
+            "img details"
+            "details details";
+
+            margin-bottom: 500px;
+    }
+
 }
