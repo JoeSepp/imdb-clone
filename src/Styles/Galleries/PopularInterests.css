@@ -3,6 +3,17 @@
     height: 250px;
 }
 
-.test {
-    width: 300px;
+
+@media (max-width: 1500px) {
+    .category-slick{
+        width: 88vw;
+    }
+
+
+}
+
+@media (max-width: 660px) {
+    .category-slick{
+        width: 85vw;
+    }
 }
