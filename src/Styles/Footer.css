@@ -23,8 +23,8 @@ footer {
     cursor: pointer;
 }
 
-.btn_sign-in>button:hover{
-  background-color: rgb(211, 170, 23);  
+.btn_sign-in>button:hover {
+    background-color: rgb(211, 170, 23);
 }
 
 
@@ -37,7 +37,7 @@ footer {
 .socials-box {
     display: flex;
     flex-direction: column;
-   
+
     width: 420px;
     padding: 17px 0px;
 
@@ -57,19 +57,19 @@ footer {
     color: white;
 }
 
-.socials-box > div {
+.socials-box>div {
     display: flex;
     gap: 25px;
 }
 
-.socials-box > div > svg {
+.socials-box>div>svg {
     transform: scale(1.1);
     border-radius: 100%;
     padding: 10px;
     cursor: pointer;
 }
 
-.socials-box > div > svg:hover{
+.socials-box>div>svg:hover {
     background-color: rgb(16, 16, 16);
 }
 
@@ -77,35 +77,36 @@ footer {
     display: grid;
     grid-template-columns: 280px auto;
 
-    justify-content:space-evenly;
+    justify-content: space-evenly;
     align-items: center;
 
     width: 420px;
     padding: 17px 0px;
 
-    
+
 
     border: solid 2px rgb(51, 51, 51);
     border-radius: 15px;
 }
 
-.app-qr-box > div {
+.app-qr-box>div {
     display: flex;
     flex-direction: column;
 
     text-align: left;
 }
-.footer-box-subtext{ 
+
+.footer-box-subtext {
     color: gray;
 }
 
-.app-qr-box > img {
+.app-qr-box>img {
     height: 50px;
     border: solid 4px white;
     border-radius: 5px;
 }
 
-.footer-helpful-links > div > ul {
+.footer-helpful-links>div>ul {
     list-style: none;
     display: flex;
 
@@ -118,7 +119,7 @@ footer {
     font-size: 1.1rem;
 }
 
-.footer-helpful-links > div > ul > li{
+.footer-helpful-links>div>ul>li {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,14 +129,27 @@ footer {
     cursor: pointer;
 }
 
-.footer-helpful-links > div > ul > li:hover{
+.footer-helpful-links>div>ul>li:hover {
     text-decoration: underline;
 }
 
-.footer-helpful-links > div > ul > li > svg {
+.footer-helpful-links>div>ul>li>svg {
     width: 8px;
 }
 
 .cpy-rights {
     color: rgb(85, 85, 85);
+}
+
+
+@media (max-width: 880px) {
+    .footer-box-containers {
+        flex-direction: column;
+    }
+
+    .footer-helpful-links>div>ul {
+        gap: 5px;
+        font-size: 0.8em;
+    }
+
 }
