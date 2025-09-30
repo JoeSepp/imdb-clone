@@ -5,6 +5,8 @@ import ResultBox from "./ResultBox.jsx"
 import options from "../../Data/API.js"
 
 
+/* POTŘEBA DODĚLAT ABY DOLE BYLO VIDĚT KOLIK JE STRÁNEK S VÝSLEDKAMA */
+
 function SearchPageComponent() {
     const { pageNumber, searchType, searchQuery } = useParams()
     const [results, setResults] = useState([])
