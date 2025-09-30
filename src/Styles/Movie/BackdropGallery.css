@@ -92,10 +92,21 @@
     .backdrop-slick {
         width: 750px;
     }
+
+    .backdrop-image-gallery {
+        width: 260px;
+        cursor: pointer;
+    }
 }
 
 @media (max-width:700px) {
     .backdrop-slick {
         width: 430px;
     }
+
+    .backdrop-image-gallery {
+        width: 220px;
+        cursor: pointer;
+    }
+
 }

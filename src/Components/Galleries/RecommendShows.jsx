@@ -27,7 +27,26 @@ function RecommendShows() {
         slidesToShow: 3,
         slidesToScroll: 3,
         nextArrow: <NextArrow />,
-        prevArrow: <PrevArrow />
+        prevArrow: <PrevArrow />,
+        responsive: [
+            {
+                breakpoint: 930,
+                settings: {
+                    slidesToScroll: 2,
+                    slidesToShow: 2
+                }
+            },
+            {
+                breakpoint: 680,
+                settings: {
+                    slidesToScroll: 1,
+                    slidesToShow: 1,
+                    centerMode: true,
+                    infinite: false,
+                    speed: 300
+                }
+            }
+        ]
     }
 
     useEffect(() => {
