@@ -168,14 +168,50 @@
     }
 }
 
-@media (max-width: 1400px) and (min-width: 800px) {}
+@media (max-width: 1400px) and (min-width: 800px) {
+
+
+    .hbm_top-flex-box {
+        display: flex;
+        gap: 80vw;
+    }
+}
 
 @media (max-width: 800px) {
     .hamburger-menu {
         display: none;
     }
 
+    .hbm_top-flex-box {
+        display: flex;
+        gap: 55vw;
+    }
+
     .header-top-left-menu {
         display: inline;
+    }
+
+    .category-list>h2 {
+        font-size: 1.2rem;
+    }
+
+    .category-navbar-container>svg {
+        margin-top: 3px;
+    }
+
+    .category-list>ul>li {
+        font-size: 1rem;
+    }
+
+    .category-grid-container {
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+    }
+
+    .hamburger-menu-expanded {
+        overflow-y: scroll;
+        overflow-x: hidden;
     }
 }
