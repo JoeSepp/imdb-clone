@@ -111,7 +111,7 @@
 }
 
 .see-all-results-searchbar {
-    display: none;
+    display: inline;
 }
 
 .see-all-results-searchbar.show-more {

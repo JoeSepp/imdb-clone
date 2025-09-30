@@ -3,6 +3,7 @@ import { useState } from "react"
 import FoundMovieComponent from "./foundMovieComponent";
 import "../../Styles/Header/SearchBar.css"
 import LoadingComponent from "../LoadingComponent.jsx"
+import { Link } from "react-router-dom";
 
 //const API_KEY = "4ef57d82";
 
@@ -99,7 +100,9 @@ function SearchBar() {
                     }
 
                 })}
+                <Link to={`/search/1/${searchType}/${searchValue}`}>
                 <span className="see-all-results-searchbar">See all results for "{searchValue}"</span>
+                </Link>
             </div>
 
         </form>

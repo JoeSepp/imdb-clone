@@ -1,0 +1,36 @@
+.search-results-page-section{
+    display: flex;
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.search-results-box{
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    align-items: center;
+
+    text-align: left;
+    gap: 25px;
+    width: 50vw;
+    padding: 20px 35px;
+
+    background-color: rgb(16, 16, 16);
+
+    border-radius: 15px;
+}
+
+.search-results-box > img{
+    width: 150px;
+    border-radius: 15px;
+}
+
+.search-results-box > div > h1{
+    font-size: 2rem;
+}
+
+.search-results-box > div > p {
+    font-style: italic;
+    color: gray;
+}
+
