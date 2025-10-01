@@ -3,7 +3,15 @@ import "../../Styles/ResultBox.css"
 
 function ResultBox({ id, poster_path, title, overview, type }) {
 
-    const imgSrc = `https://media.themoviedb.org/t/p/w220_and_h330_face${poster_path}`
+   
+
+    let imgSrc;
+
+    if(poster_path){
+        imgSrc = `https://media.themoviedb.org/t/p/w220_and_h330_face${poster_path}`
+    } else {
+        imgSrc = "/src/Images/empty-img.png"
+    }
 
     const linkStyle = {
         color: "white",

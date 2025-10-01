@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { useParams, Link } from "react-router-dom"
 import { useState, useEffect } from "react"
 import LoadingComponent from "../LoadingComponent.jsx"
 import ResultBox from "./ResultBox.jsx"
@@ -13,6 +13,12 @@ function SearchPageComponent() {
     const [loading, setIsLoading] = useState(true)
     const [numOfPages, setNumOfPages] = useState()
     const [pages, setPages] = useState([1])
+    const [prevPage, setPrevPage] = useState(pageNumber)
+
+    const linkStyle = {
+        color: "white",
+        textDecoration: "none"
+    }
 
     useEffect(() => {
         fetch(`https://api.themoviedb.org/3/search/${searchType}?query=${searchQuery}&include_adult=false&language=en-US&page=${pageNumber}`, options)
@@ -25,8 +31,23 @@ function SearchPageComponent() {
             })
             .catch(err => console.error(err));
 
-    }, [searchQuery])
+    }, [searchQuery, pageNumber])
 
+    function handleSetPages(num) {
+        setPages(prev => [...prev, num])
+    }
+
+    useEffect(() => {
+        for (var i = 2; i <= numOfPages; i++) {
+            handleSetPages(i)
+        }
+    }, [numOfPages])
+
+    if (prevPage !== pageNumber) {
+        setPrevPage(pageNumber)
+        window.location.reload()
+        window.location.scrollTop()
+    }
 
     if (loading) {
         return <LoadingComponent />
@@ -40,13 +61,20 @@ function SearchPageComponent() {
                     key={index}
                     id={res.id}
                     poster_path={res.poster_path}
-                    title={res.name}
+                    title={res.name ? res.name : res.title}
                     overview={res.overview}
                     type={res.media_type}
                 />
             })}
             <div>
                 <ul>
+                    {pages.map((page, index) => {
+                        return (
+                            <Link to={`/search/${page}/${searchType}/${searchQuery}`} key={index} style={linkStyle} className="page-link">
+                                <li>{page}</li>
+                            </Link>
+                        )   
+                    })}
                 </ul>
             </div>
         </section>

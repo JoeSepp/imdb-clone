@@ -34,3 +34,21 @@
     color: gray;
 }
 
+.search-results-page-section > div > ul{
+    display: flex;
+    width: 50vw;
+
+    list-style: none;
+    justify-content: center;
+
+    gap: 25px;
+
+    font-size: 1.1rem;
+}
+
+
+.page-link > li:hover {
+    color: rgb(245, 197, 24);
+    transition: color 200ms;
+}
+

@@ -25,8 +25,6 @@ function MediaHero({ details, credits}) {
         textDecoration: "none"
     }
 
-    console.log(credits)
-
     if (mediaType === "movie") {
         const backgroundStyle = getRatingColor(details.vote_average)
 
