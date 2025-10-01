@@ -37,10 +37,19 @@ function SearchPageComponent() {
         setPages(prev => [...prev, num])
     }
 
+    function getCurrentPage() {
+        document.querySelector(`.page_${pageNumber}`).classList.add("current_page")
+    }
+
     useEffect(() => {
         for (var i = 2; i <= numOfPages; i++) {
             handleSetPages(i)
         }
+
+        setTimeout(() => {
+            getCurrentPage()
+        }, 100)
+
     }, [numOfPages])
 
     if (prevPage !== pageNumber) {
@@ -71,9 +80,9 @@ function SearchPageComponent() {
                     {pages.map((page, index) => {
                         return (
                             <Link to={`/search/${page}/${searchType}/${searchQuery}`} key={index} style={linkStyle} className="page-link">
-                                <li>{page}</li>
+                                <li className={`page_${page} page_list`}>{page}</li>
                             </Link>
-                        )   
+                        )
                     })}
                 </ul>
             </div>

@@ -15,7 +15,8 @@ function ResultBox({ id, poster_path, title, overview, type }) {
 
     const linkStyle = {
         color: "white",
-        textDecoration: "none"
+        textDecoration: "none",
+        maxWidth: "50vw"
     }
 
     return (

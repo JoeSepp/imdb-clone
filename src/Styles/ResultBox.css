@@ -1,11 +1,11 @@
-.search-results-page-section{
+.search-results-page-section {
     display: flex;
     flex-direction: column;
 
     gap: 15px;
 }
 
-.search-results-box{
+.search-results-box {
     display: grid;
     grid-template-columns: 150px 1fr;
     align-items: center;
@@ -18,23 +18,25 @@
     background-color: rgb(16, 16, 16);
 
     border-radius: 15px;
+
+    cursor: pointer;
 }
 
-.search-results-box > img{
+.search-results-box>img {
     width: 150px;
     border-radius: 15px;
 }
 
-.search-results-box > div > h1{
+.search-results-box>div>h1 {
     font-size: 2rem;
 }
 
-.search-results-box > div > p {
+.search-results-box>div>p {
     font-style: italic;
     color: gray;
 }
 
-.search-results-page-section > div > ul{
+.search-results-page-section>div>ul {
     display: flex;
     width: 50vw;
 
@@ -46,9 +48,12 @@
     font-size: 1.1rem;
 }
 
-
-.page-link > li:hover {
+.page-link>li:hover {
     color: rgb(245, 197, 24);
     transition: color 200ms;
 }
 
+.page_list.current_page{
+    color: rgb(245, 197, 24);
+    text-decoration: underline;
+}
