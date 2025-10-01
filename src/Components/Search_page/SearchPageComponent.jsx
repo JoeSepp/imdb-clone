@@ -14,6 +14,7 @@ function SearchPageComponent() {
     const [numOfPages, setNumOfPages] = useState()
     const [pages, setPages] = useState([1])
     const [prevPage, setPrevPage] = useState(pageNumber)
+    const [prevType, setPrevType] = useState(searchType)
 
     const linkStyle = {
         color: "white",
@@ -52,8 +53,9 @@ function SearchPageComponent() {
 
     }, [numOfPages])
 
-    if (prevPage !== pageNumber) {
+    if (prevPage !== pageNumber || prevType !== searchType ) {
         setPrevPage(pageNumber)
+        setPrevType(searchType)
         window.location.reload()
         window.location.scrollTop()
     }
