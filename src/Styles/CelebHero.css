@@ -49,12 +49,15 @@
     letter-spacing: normal;
     line-height: 28px;
     display: inline;
+
+    font-size: 1rem;
 }
 
 .biography-box>h3 {
     margin-top: 100px;
     margin-bottom: 5px;
     font-size: 1.5rem;
+    color: rgb(255, 208, 0);
 }
 
 .show-more-text {
@@ -69,7 +72,7 @@
     z-index: 1;
 }
 
-.hide{
+.hide {
     display: none;
 }
 
@@ -129,4 +132,10 @@
         margin-left: 40px;
         width: 80vw;
     }
+
+    .biography-box {
+        width: 80vw;
+    }
+
+  
 }

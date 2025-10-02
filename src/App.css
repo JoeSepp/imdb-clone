@@ -15,7 +15,6 @@ body.hide-scroll {
 
 .main,
 .movie,
-.celeb,
 .login-hero {
   margin: 0;
   padding: 0;
@@ -23,7 +22,15 @@ body.hide-scroll {
   padding-top: 8px;
 }
 
+.celeb {
+  margin: 0;
+  padding: 0;
+  margin-left: 20%;
+  padding-top: 8px;
+}
+
 @media (max-width: 1400px) {
+
   .main,
   .movie,
   .celeb,

@@ -1,15 +1,15 @@
-.media-credits{
+.media-credits {
     display: flex;
     flex-direction: column;
 
     align-items: start;
-    margin-left: 400px;
-    
+    margin-left: 250px;
+
     margin-bottom: 50px;
 
     background-color: rgb(16, 16, 16);
-    max-width: 600px;
-    max-height: 500px;
+    width: 30vw;
+   
 
     overflow-y: scroll;
     overflow-x: hidden;
@@ -20,41 +20,41 @@
 
 }
 
-.media-credits > h2 {
+.media-credits>h2 {
     font-size: 1.8rem;
     color: rgb(255, 208, 0);
 }
 
-.media-credits::-webkit-scrollbar-thumb{
+.media-credits::-webkit-scrollbar-thumb {
     background: rgb(56, 56, 56);
     border: 4px solid rgb(16, 16, 16);
     border-radius: 10px;
-    background-clip:content-box;
+    background-clip: content-box;
 }
 
-.media-credits::-webkit-scrollbar-track{
+.media-credits::-webkit-scrollbar-track {
     background: rgb(16, 16, 16);
     border-radius: 10px;
 
 }
 
-.media-credits::-webkit-scrollbar{
-    height: 15px; 
-    
+.media-credits::-webkit-scrollbar {
+    height: 15px;
+
 }
 
 
-.media-credits > div {
+.media-credits>div {
     display: flex;
 }
 
-.media-credits > div > h3 {
+.media-credits>div>h3 {
     color: white;
     font-style: italic;
 }
 
 
-.media-credits > div > ul {
+.media-credits>div>ul {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -65,7 +65,7 @@
     width: 480px;
 }
 
-.media-credits > div > ul::before{
+.media-credits>div>ul::before {
     content: '';
     position: absolute;
 
@@ -77,20 +77,40 @@
     background-color: gray;
 }
 
-.movie-ul-list-media{
+.movie-ul-list-media {
     position: relative;
 }
 
-.movie-link-router{
+.movie-link-router {
     color: white;
-    text-decoration: none;  
+    text-decoration: none;
 }
 
-.movie-link-router:hover{
+.movie-link-router:hover {
     color: rgb(255, 208, 0);
     transition: color 200ms;
 }
 
-.movie-ul-list-media > input {
+.movie-ul-list-media>input {
     float: right;
+}
+
+@media (max-width:1335px) {
+    .media-credits {
+        width: 80vw;
+        margin-left: 20vw;
+    }
+}
+
+@media (max-width:900px) {
+    .media-credits {
+        width: 80vw;
+        margin-left: 5vw;
+    }
+}
+
+@media (max-width:800px) {
+    .media-credits {
+        margin-left: 0vw;
+    }
 }
