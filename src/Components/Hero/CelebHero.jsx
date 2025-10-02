@@ -12,7 +12,7 @@ function CelebHero() {
     const [knownForMovies, setKnownForMovies] = useState([]);
     const [biography, setBiography] = useState("");
     const [isLoading, setIsLoading] = useState(true);
-    const [readMore, setReadMore] = useState("");
+    const [readMore, setReadMore] = useState("...show more");
     const [prevId, setPrevId] = useState(id)
 
     const options = {
@@ -29,10 +29,10 @@ function CelebHero() {
             .then(res => {
                 setPersonDetails(res)
                 if (res.biography.length >= 450) {
-                    setReadMore("...read more")
                     setBiography(res.biography.slice(0, 450))
                 } else {
                     setBiography(res.biography)
+                    setReadMore("")
                 }
 
                 setTimeout(() => {
@@ -52,13 +52,10 @@ function CelebHero() {
             .catch(err => console.error(err));
     }, [id])
 
-    function resizeParagraph() {
+    function resizeParagraph(e) {
         if (!isLoading && readMore === "...show more") {
             setBiography(prev => personDetails.biography)
-            setReadMore(prev => "...show less")
-        } else {
-            setBiography(prev => personDetails.biography.slice(0, 450))
-            setReadMore(prev => "...show more")
+            e.target.classList.add("hide")
         }
     }
 
@@ -92,7 +89,7 @@ function CelebHero() {
                     <p>
                         {biography}
                     </p>
-                    <span className="show-more-text" onClick={resizeParagraph}>{readMore}</span>
+                    {readMore !== "" && <span className="show-more-text" onClick={resizeParagraph}>{readMore}</span>}
                     <h3>Known for</h3>
                     <div className="known-for-movies-flex">
                         {knownForMovies.map((movie, index) => {

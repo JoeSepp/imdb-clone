@@ -25,7 +25,6 @@ function SearchPageComponent() {
         fetch(`https://api.themoviedb.org/3/search/${searchType}?query=${searchQuery}&include_adult=false&language=en-US&page=${pageNumber}`, options)
             .then(res => res.json())
             .then(res => {
-                console.log(res)
                 setResults(res.results)
                 setNumOfPages(res.total_pages)
                 setIsLoading(false)
