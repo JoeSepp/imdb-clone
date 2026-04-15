@@ -7,7 +7,7 @@ function CategoryCard(props){
 
     return(
         <div className="category-container">
-            <img src={image}></img>
+            <img src='src\Images\placeholder.png'></img>
             <span className="category-header"><span>{header}</span></span>
         </div>
     )

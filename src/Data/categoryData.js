@@ -3,7 +3,7 @@
 const categoryData = [
     {
         heading: "Superhero",
-        image: "https://m.media-amazon.com/images/M/MV5BMTM2MzY1ODc1Nl5BMl5BanBnXkFtZTcwNTg4OTY3Nw@@._V1_QL75_UX1000_CR0,0,1000,563_.jpg"
+        image: '\Images\placeholder.png'
     },
     {
         heading: "Coming-of-Age",
