@@ -1,12 +1,29 @@
-# React + Vite
+# 🎬 Movie Database App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 About Project
+This project is a front-end web application inspired by IMDB, built using JavaScript and The Movie Database (TMDB) API.
 
-Currently, two official plugins are available:
+The app allows users to search for movies and actors, view detailed profiles, and explore movie data dynamically.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Tech Stack
+- HTML5
+- CSS3
+- JavaScript (ES6+)
+- TMDB API
 
-## Expanding the ESLint configuration
+## ✨ Features
+- 🔍 Search movies and actors
+- 🎭 Actor profiles
+- 🎬 Movie detail pages
+- ⚡ Dynamic data fetching (API)
+- 📱 Responsive design
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📚 What I learned
+- Working with REST APIs (fetch, async/await)
+- Dynamic rendering of data using JavaScript
+- Structuring front-end applications
+- Handling user input and search functionality
+
+## ⚠️ Note
+Images used in this project were replaced with free-to-use assets due to licensing restrictions.
+This project was built for educational purposes.
