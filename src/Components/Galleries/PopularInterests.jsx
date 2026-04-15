@@ -51,7 +51,6 @@ function PopularInterests() {
             <div className="movie-slider-container">
                 <Slider {...settings}>
                     {category.map((cat, index) => {
-                        console.log(cat.image)
                         return <div className="test" key={index}><CategoryCard image={cat.image} header={cat.heading} /></div>
                     })}
                 </Slider>

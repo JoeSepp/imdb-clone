@@ -13,8 +13,6 @@ function MovieAbout({ cast, details }) {
 
         return USDollar.format(amount)
     }
-
-    console.log(cast.length)
     
     return (
         <section className="movie-about-section-grid">

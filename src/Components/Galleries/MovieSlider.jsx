@@ -15,6 +15,18 @@ function MovieSlider(props) {
     const [movies, setMovies] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
+    //const [isMobile, setIsMobile] = useState(false);
+ /*
+    const handleResize = ()=>{
+        if(window.innerWidth > 720){
+            setIsMobile(isMobile => this)
+        }else{
+            setIsMobile(false)
+        }
+
+        console.log(isMobile)
+    }
+*/
     const settings = {
         className: "movies-slick",
         speed: 500,
@@ -67,6 +79,7 @@ function MovieSlider(props) {
     };
 
     useEffect(() => {
+        // window.addEventListener("resize", handleResize)
         const response = fetch(props.api, options)
             .then(res => res.json())
             .then(res => {
