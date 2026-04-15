@@ -1,4 +1,5 @@
 import "../../Styles/Hero/NewVideos.css"
+import placeholder from "../../Images/placeholder.png"
 
 function NewVideos(props) {
 
