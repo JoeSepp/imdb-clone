@@ -9,7 +9,6 @@ import LoadingComponent from "../LoadingComponent"
 import TVAbout from "./TVAbout"
 import "../../Styles/Movie/MoviePage.css"
 import { useState, useEffect } from "react"
-import options from "../../Data/API"
 
 function MoviePage() {
     const { mediaType, id } = useParams()
@@ -18,6 +17,15 @@ function MoviePage() {
     const [credits, setCredits] = useState([])
     const [prevId, setPrevId] = useState(id)
     const [cast, setCast] = useState([])
+
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNzMzMTUwMzg2NDYxODMzMzEwNTc5ZmUwOTNlMDMyNiIsIm5iZiI6MTc1NTA2Nzg5Ny44OTUsInN1YiI6IjY4OWMzNWY5MzdlYjk3ZWM3NGI3MDk4MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.HqDk6K8luPmOh1yruRo-hz5wZk_zEEBeKQBZoD1Ikgc`
+        }
+    };
+
 
     useEffect(() => {
         async function fetchData() {
@@ -78,7 +86,7 @@ function MoviePage() {
     if (prevId !== id) {
         setPrevId(id)
         window.location.reload()
-        window. location.scrollTop()
+        window.location.scrollTop()
     }
 
     if (loading) {
@@ -89,7 +97,7 @@ function MoviePage() {
     return (
         <div className="movie-page-div">
             <MediaHero details={details} credits={credits} cast={cast} />
-            {mediaType === "movie" && cast? <MovieAbout cast={cast} details={details} /> : <TVAbout cast={cast} details={details}/>}
+            {mediaType === "movie" && cast ? <MovieAbout cast={cast} details={details} /> : <TVAbout cast={cast} details={details} />}
             <SlickMovieGallery />
             <MovieReviews id={id} mediaType={mediaType} />
             <RecommendShows />

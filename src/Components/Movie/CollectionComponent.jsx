@@ -2,13 +2,20 @@ import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 import LoadingComponent from "../LoadingComponent";
 import MovieCard from "../Cards/MovieCard";
-import options from "../../Data/API";
-
 function CollectionComponent({ id, mediaType }) {
 
     const [collectionData, setCollectionData] = useState([]);
     const [collectionFromId, setCollectionFromId] = useState(0);
     const [isLoading, setIsLoading] = useState(true);
+
+
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNzMzMTUwMzg2NDYxODMzMzEwNTc5ZmUwOTNlMDMyNiIsIm5iZiI6MTc1NTA2Nzg5Ny44OTUsInN1YiI6IjY4OWMzNWY5MzdlYjk3ZWM3NGI3MDk4MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.HqDk6K8luPmOh1yruRo-hz5wZk_zEEBeKQBZoD1Ikgc`
+        }
+    };
 
 
 
@@ -21,7 +28,7 @@ function CollectionComponent({ id, mediaType }) {
             })
             .catch(err => console.error(err));
     },
-        [id])
+        [id, options])
 
     useEffect(() => {
         if (collectionFromId) {
@@ -30,10 +37,10 @@ function CollectionComponent({ id, mediaType }) {
                 .then(res => {
                     setCollectionData(res.parts)
 
-                    setTimeout(()=>{
-                         setIsLoading(false)
+                    setTimeout(() => {
+                        setIsLoading(false)
                     }, 1500)
-                   
+
                 })
                 .catch(err => console.error(err));
         }

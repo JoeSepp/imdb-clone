@@ -4,15 +4,22 @@ import FoundMovieComponent from "./foundMovieComponent";
 import "../../Styles/Header/SearchBar.css"
 import LoadingComponent from "../LoadingComponent.jsx"
 import { Link } from "react-router-dom";
-import options from "../../Data/API.js";
 
 function SearchBar() {
-
 
     const [searchType, setSearchType] = useState("multi")
     const [searchValue, setSearchValue] = useState("")
     const [movieData, setMovieData] = useState([{}])
     const [isLoading, setIsLoading] = useState(true)
+
+    const options = {
+        method: 'GET',
+        headers: {
+            accept: 'application/json',
+            Authorization: `Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNzMzMTUwMzg2NDYxODMzMzEwNTc5ZmUwOTNlMDMyNiIsIm5iZiI6MTc1NTA2Nzg5Ny44OTUsInN1YiI6IjY4OWMzNWY5MzdlYjk3ZWM3NGI3MDk4MiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.HqDk6K8luPmOh1yruRo-hz5wZk_zEEBeKQBZoD1Ikgc`
+        }
+    };
+
 
     function getValueFromInput(val) {
         setSearchValue(prev => val.target.value)
@@ -53,9 +60,6 @@ function SearchBar() {
     }
 
 
-
-
-
     return (
 
         <form className="search-bar" tabIndex="1" >
@@ -93,7 +97,7 @@ function SearchBar() {
 
                 })}
                 <Link to={`/search/1/${searchType}/${searchValue}`}>
-                <span className="see-all-results-searchbar">See all results for "{searchValue}"</span>
+                    <span className="see-all-results-searchbar">See all results for "{searchValue}"</span>
                 </Link>
             </div>
 
