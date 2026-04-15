@@ -93,7 +93,7 @@ function CelebHero() {
                     <h3>Known for</h3>
                     <div className="known-for-movies-flex">
                         {knownForMovies.map((movie, index) => {
-                            return <MovieCard key={index} id={movie.id} poster_path={movie.poster_path} />
+                            return <MovieCard key={index} id={movie.id} media_type="movie" poster_path={movie.poster_path} />
                         })}
                     </div>
                 </div>
