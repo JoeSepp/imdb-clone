@@ -22,7 +22,7 @@ function MovieSlider(props) {
         infinite: false,
         draggable: true,
         slidesToShow: 6,
-        slidesToScroll: 4,
+        slidesToScroll: 6,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
         responsive: [
