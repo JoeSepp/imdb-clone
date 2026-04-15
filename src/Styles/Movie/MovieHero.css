@@ -45,6 +45,7 @@
 
 .movie-details-container>img {
     border-radius: 25px;
+    height: 450px;
 }
 
 .movie-details {
