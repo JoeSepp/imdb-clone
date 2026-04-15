@@ -111,17 +111,31 @@
         min-width: 88vw;
     }
 
-
     .hero-poster {
-        max-width: 45vh;
+        max-width: 150px;
+        max-height: 200px;
         border-radius: 20px;
     }
 
-    .label-text-area>h1,
-    .label-text-area>h2 {
-        font-size: 1.5rem;
+    .slide-caption-play-icon{
+        height: 15px;
     }
 
+    .label-text-area{
+        display: flex;
+        flex-direction: column;
+        max-height: 150px;
+        text-wrap: wrap;
+        max-width: 40vw;
+    }
+
+    
+    .label-text-area>h1,
+    .label-text-area>h2 {
+        font-size: 0.8rem;
+        padding: 0;
+        margin: 0;
+    }
 
 }
 

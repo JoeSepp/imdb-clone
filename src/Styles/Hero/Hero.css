@@ -10,6 +10,25 @@
 }
 
 
+@media (max-width: 1400px) and (min-width: 600px) {
+
+    .hero-section{
+        max-width: 84vw;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .hero-section{
+        max-width: 90vw;
+      
+    }
+
+}
+
+
+
 @keyframes fadeIn {
     0% {
         opacity: 0;

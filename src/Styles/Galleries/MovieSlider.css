@@ -33,6 +33,10 @@
         max-width: 88vw;
     }
 
+    .content {
+        padding: 0 10%;
+    }
+
     .movies-slick {
         width: 88vw;
     }
@@ -42,6 +46,10 @@
 @media (max-width: 800px) {
     .movies-slick>div {
         width: 88vw;
+    }
+
+    .content {
+        padding: 0 10%;
     }
 
     .movies-slick {
