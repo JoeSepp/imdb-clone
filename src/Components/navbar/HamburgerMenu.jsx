@@ -27,7 +27,7 @@ function HamburgerMenu() {
         <div>
             <div className="header-top-left-menu">
                 <div className="database-logo-div">
-                    <a href="/"><img src="\src\Images\cinema-logo.png" width={63} /></a>
+                    <a href="/"><img src="\src\Images\placeholder.png" width={63} /></a>
                 </div>
                 <button className="hamburger-menu" onClick={handleMenuOpening}>
                     <img src="\src\Images\hamburger-menu.png" height={21} />
@@ -37,7 +37,7 @@ function HamburgerMenu() {
             <div className="hamburger-menu-expanded">
                 <div className="menu-container">
                     <div className="hbm_top-flex-box">
-                        <a href="/"><img src="\src\Images\cinema-logo.png" height={50} /></a>
+                        <a href="/"><img src="\src\Images\placeholder.png" height={50} /></a>
                         <svg onClick={handleMenuClosing} xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="close-menu ipc-icon ipc-icon--clear" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M18.3 5.71a.996.996 0 0 0-1.41 0L12 10.59 7.11 5.7A.996.996 0 1 0 5.7 7.11L10.59 12 5.7 16.89a.996.996 0 1 0 1.41 1.41L12 13.41l4.89 4.89a.996.996 0 1 0 1.41-1.41L13.41 12l4.89-4.89c.38-.38.38-1.02 0-1.4z"></path></svg>
                     </div>
                     <div className="category-grid-container">
