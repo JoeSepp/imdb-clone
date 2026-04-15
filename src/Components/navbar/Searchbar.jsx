@@ -1,6 +1,6 @@
 import SearchDropdown from "./SearchDropdown"
 import { useState } from "react"
-import FoundMovieComponent from "./foundMovieComponent";
+import FoundMovieComponent from "./FoundMovieComponent";
 import "../../Styles/Header/SearchBar.css"
 import LoadingComponent from "../LoadingComponent.jsx"
 import { Link } from "react-router-dom";

@@ -1,8 +1,8 @@
 import { Link, useParams } from "react-router-dom";
 import "../../Styles/Movie/MediaCredits.css"
-import MediaHoverComponent from "./MediaHoverComponent";
+import MediaHoverComponent from "./MediaHoverComponent.jsx";
 import { useState, useEffect } from "react"
-import LoadingComponent from "../LoadingComponent";
+import LoadingComponent from "../LoadingComponent.jsx";
 
 
 function MediaCredits({ type, options }) {

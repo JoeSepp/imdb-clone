@@ -2,7 +2,7 @@ import React from "react"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import newsData from "../../../Data/newsData"
+import newsData from "../../../Data/newsData.js"
 import NewVideos from "../NewVideos.jsx"
 import "../../../Styles/Sliders/SideSlider.css"
 

@@ -1,5 +1,5 @@
 import "../../Styles/Header/HamburgerMenu.css"
-import CategoryContainer from "./CategoryContainer"
+import CategoryContainer from "./CategoryContainer.jsx"
 
 
 /* TODO:

@@ -1,4 +1,4 @@
-import Header from "../Components/navbar/Header"
+import Header from "../Components/navbar/Header.jsx"
 import Footer from "../Components/Footer.jsx"
 import MediaPage from "../Components/Movie/MediaPage.jsx"
 import { useState } from "react"

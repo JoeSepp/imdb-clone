@@ -1,4 +1,4 @@
-import Header from "../Components/navbar/Header"
+import Header from "../Components/navbar/Header.jsx"
 import Footer from "../Components/Footer.jsx"
 import CelebHero from "../Components/Hero/CelebHero.jsx"
 
