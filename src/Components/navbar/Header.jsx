@@ -1,4 +1,4 @@
-import "../../Styles/Header/header.css"
+import "../../Styles/Header/Header.css"
 import SearchBar from "./Searchbar.jsx"
 import HamburgerMenu from "./HamburgerMenu.jsx"
 import LoginSection from "./LoginSection.jsx"
