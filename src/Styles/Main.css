@@ -1,5 +1,6 @@
 .gallery-container {
-
+    display: flex;
+    flex-direction: column;
 
     opacity: 0;
     animation-name: fadeIn;
@@ -43,7 +44,7 @@
     color: rgb(255, 208, 0);
     text-align: left;
 
-    margin-bottom: 28px;
+    margin-top: 50px;
 }
 
 
