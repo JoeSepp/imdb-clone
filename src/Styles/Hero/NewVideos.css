@@ -107,8 +107,7 @@
 }
 
 
-@media (max-width: 1200px) {
-
+@media (max-width: 1650px) {
     .hero-label-list_next{
         display: none;
     }

@@ -33,18 +33,11 @@ function MovieSlider(props) {
         lazyLoad: false,
         infinite: false,
         draggable: true,
-        slidesToShow: 6,
-        slidesToScroll: 6,
+        slidesToShow: 5,
+        slidesToScroll: 5,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
         responsive: [
-            {
-                breakpoint: 700,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
-                }
-            },
              {
                 breakpoint: 900,
                 settings: {
@@ -53,17 +46,17 @@ function MovieSlider(props) {
                 }
             },
             {
-                breakpoint: 1100,
+                breakpoint: 1200,
                 settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 4
+                    slidesToShow: 3,
+                    slidesToScroll: 3
                 }
             },
             {
-                breakpoint: 1400,
+                breakpoint: 1650,
                 settings: {
-                    slidesToShow: 5,
-                    slidesToScroll: 5
+                    slidesToShow: 4,
+                    slidesToScroll: 4
                 }
             }
 

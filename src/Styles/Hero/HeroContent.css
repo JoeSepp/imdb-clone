@@ -7,8 +7,8 @@
 
 .hero-image {
     border-radius: 15px;
-    width: 44vw;
-    min-width: 950px;
+    max-width: 100%;
+    height: auto;
     object-fit: cover;
 }
 
@@ -23,9 +23,12 @@
 }
 
 .hero-poster {
-    height: 245px;
-    width: 200px;
+    
+    width: 20%;
+    height: 200px;
     border-radius: 20px;
+
+    align-self: center;
 }
 
 .current-hero-label-info {
@@ -106,14 +109,16 @@
     color: rgb(165, 165, 165);
 }
 
-@media (max-width: 1400px) and (min-width: 600px) {
-    .hero-image {
-        min-width: 88vw;
+@media (max-width: 1450px) and (min-width: 600px) {
+
+    .hero-image{
+        object-fit:contain;
+        width: 100%;
     }
 
     .hero-poster {
-        max-width: 150px;
-        max-height: 200px;
+        max-width: 40%;
+        min-height: auto;
         border-radius: 20px;
     }
 
@@ -143,7 +148,7 @@
 
 @media (max-width: 600px) {
     .hero-image {
-        min-width: 88vw;
+        width: 100%;
     }
 
     .hero-poster {

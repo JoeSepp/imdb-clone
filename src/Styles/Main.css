@@ -1,10 +1,5 @@
 .gallery-container {
-    position: relative;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr;
-    align-items: start;
-    justify-content: start;
+
 
     opacity: 0;
     animation-name: fadeIn;

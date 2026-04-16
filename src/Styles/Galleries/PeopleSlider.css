@@ -3,11 +3,11 @@
 
     display: flex;
     flex-direction: column;
+
+    max-width: 1250px;
 }
 
-.actors-slick {
-    width: 1250px;
-}
+
 
 .actor-slider-container {
     display: flex;
@@ -61,31 +61,4 @@
     font-weight: 500;
 
     margin-bottom: 10px;
-}
-
-@media (max-width: 1550px) and (min-width: 1330px) {
-    .actors-slick {
-        max-width: 75vw;
-    }
-
-}
-
-@media (max-width: 1330px) and (min-width: 1000px) {
-    .actors-slick {
-        max-width: 85vw;
-    }
-
-}
-
-@media (max-width: 1000px) and (min-width: 800px) {
-    .actors-slick {
-        max-width: 85vw;
-    }
-
-}
-
-@media (max-width: 800px) {
-    .actors-slick {
-        width: 88vw;
-    }
 }

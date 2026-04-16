@@ -12,7 +12,7 @@ function MainSlider({slider, setSlider}) {
 
     var settings = {
         draggable: false,
-        autoplay: true,
+        autoplay: false,
         autoplaySpeed: 5000,
         className: "hero-content-slider",
         infinite: true,

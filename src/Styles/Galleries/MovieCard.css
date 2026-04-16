@@ -10,14 +10,14 @@
     border-bottom-left-radius: 10px;
 
     background-color: rgb(26, 26, 26);
-    width: 194px;
+    width: auto;
 
     cursor: pointer;
 }
 
 .movie-poster-container>img {
-    height: 287px;
-    width: 194px;
+    max-height: auto;
+    width: auto;
 
     object-fit: cover;
     border-top-right-radius: 10px;
