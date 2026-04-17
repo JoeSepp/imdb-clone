@@ -1,10 +1,11 @@
 .people-gallery-container {
     margin-top: 50px;
+    margin-right: 20px;
 
     display: flex;
     flex-direction: column;
 
-    max-width: 1250px;
+    max-width: 1200px;
 }
 
 

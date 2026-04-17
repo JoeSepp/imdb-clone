@@ -17,37 +17,30 @@ function PeopleSlider(props) {
         lazyLoad: true,
         infinite: false,
         draggable: false,
-        slidesToShow: 5,
-        slidesToScroll: 5,
+        slidesToShow: 6,
+        slidesToScroll: 6,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
         responsive: [
             {
-                breakpoint: 700,
-                settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                }
-            },
-            {
-                breakpoint: 1000,
+                breakpoint: 600,
                 settings: {
                     slidesToShow: 3,
-                    slidesToScroll: 3,
-                }
-            },,
-            {
-                breakpoint: 1350,
-                settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 4,
+                    slidesToScroll: 3
                 }
             },
             {
-                breakpoint: 1450,
+                breakpoint: 900,
+                settings: {
+                    slidesToShow: 4,
+                    slidesToScroll: 4
+                }
+            },
+            {
+                breakpoint: 1650,
                 settings: {
                     slidesToShow: 5,
-                    slidesToScroll: 5,
+                    slidesToScroll: 5
                 }
             }
         ]
