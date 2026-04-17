@@ -18,19 +18,7 @@ function MovieSlider(props) {
     var cssClassName = header;
     cssClassName = cssClassName.replace(/\s+/g, "-").toLowerCase();
 
-    //const [isMobile, setIsMobile] = useState(false);
-    /*
-       const handleResize = ()=>{
-           if(window.innerWidth > 720){
-               setIsMobile(isMobile => this)
-           }else{
-               setIsMobile(false)
-           }
-   
-           console.log(isMobile)
-       }
-   */
-    const settings = {
+    var settings = {
         className: "movies-slick",
         speed: 500,
         lazyLoad: false,
@@ -64,6 +52,15 @@ function MovieSlider(props) {
             }
 
         ]
+    }
+
+
+    if (window.innerWidth <= 600) {
+        settings = {
+            ...settings,
+            slidesToShow: 3,
+            slidesToScroll: 3
+        }
     }
 
     const options = {

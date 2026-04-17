@@ -9,9 +9,9 @@ import PrevArrow from "../Arrows/PrevArrow.jsx";
 
 function PeopleSlider(props) {
 
-    const [actors, setActors] = React.useState([])
+    const [actors, setActors] = React.useState([]);
 
-    const settings = {
+    var settings = {
         className: "actors-slick",
         speed: 800,
         lazyLoad: true,
@@ -46,6 +46,14 @@ function PeopleSlider(props) {
         ]
     }
 
+    if (window.innerWidth <= 600) {
+        settings = {
+            ...settings,
+            slidesToShow: 3,
+            slidesToScroll: 3
+        }
+    }
+
 
     const options = {
         method: 'GET',
@@ -60,6 +68,7 @@ function PeopleSlider(props) {
             .then(res => res.json())
             .then(res => setActors(res.results))
             .catch(err => console.error(err))
+
     }, [])
 
     return (
