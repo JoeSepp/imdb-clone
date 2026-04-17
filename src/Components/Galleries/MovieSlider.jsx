@@ -19,47 +19,47 @@ function MovieSlider(props) {
     cssClassName = cssClassName.replace(/\s+/g, "-").toLowerCase();
 
     //const [isMobile, setIsMobile] = useState(false);
- /*
-    const handleResize = ()=>{
-        if(window.innerWidth > 720){
-            setIsMobile(isMobile => this)
-        }else{
-            setIsMobile(false)
-        }
-
-        console.log(isMobile)
-    }
-*/
+    /*
+       const handleResize = ()=>{
+           if(window.innerWidth > 720){
+               setIsMobile(isMobile => this)
+           }else{
+               setIsMobile(false)
+           }
+   
+           console.log(isMobile)
+       }
+   */
     const settings = {
         className: "movies-slick",
         speed: 500,
         lazyLoad: false,
         infinite: false,
         draggable: true,
-        slidesToShow: 5,
-        slidesToScroll: 5,
+        slidesToShow: 6,
+        slidesToScroll: 6,
         nextArrow: <NextArrow />,
         prevArrow: <PrevArrow />,
         responsive: [
-             {
-                breakpoint: 900,
+            {
+                breakpoint: 600,
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 3
                 }
             },
             {
-                breakpoint: 1200,
+                breakpoint: 900,
                 settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3
+                    slidesToShow: 4,
+                    slidesToScroll: 4
                 }
             },
             {
                 breakpoint: 1650,
                 settings: {
-                    slidesToShow: 4,
-                    slidesToScroll: 4
+                    slidesToShow: 5,
+                    slidesToScroll: 5
                 }
             }
 
