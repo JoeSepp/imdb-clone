@@ -8,6 +8,10 @@
 }
 
 
+.movie-gallery-container a {
+    text-decoration: none;
+}
+
 .movie-slider{
     display: flex;
     text-align: left;

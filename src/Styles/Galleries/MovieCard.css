@@ -13,6 +13,7 @@
     width: auto;
 
     cursor: pointer;
+
 }
 
 .movie-poster-container>img {
@@ -162,4 +163,15 @@
 
 .ipc-watchlist-ribbon__bg-ribbon{
     fill: rgba(53, 53, 53, 0.699);
+}
+
+
+@media (max-width:500px){
+    .m-header{
+        font-size: 0.8rem;
+    }
+
+    .button-watch-options{
+        display: none;
+    }
 }
