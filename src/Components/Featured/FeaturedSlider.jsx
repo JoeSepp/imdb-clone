@@ -31,6 +31,14 @@ function FeaturedSlider(props) {
         ]
     }
 
+       if (window.innerWidth <= 600) {
+        settings = {
+            ...settings,
+            slidesToShow: 1,
+            slidesToScroll: 1
+        }
+    }
+
     return (
         <>
             <span className="container-header">

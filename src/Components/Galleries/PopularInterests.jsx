@@ -6,12 +6,12 @@ import NextArrow from "../Arrows/NextArrow.jsx";
 import PrevArrow from "../Arrows/PrevArrow.jsx";
 import CategoryCard from "../Cards/CategoryCard.jsx";
 import categoryData from "../../Data/categoryData.js"
-import "../../Styles/Galleries/PopularInterests.css"
+
 
 function PopularInterests() {
     const [category, setCategory] = useState(categoryData)
 
-    const settings = {
+    var settings = {
         className: "category-slick",
         speed: 500,
         lazyLoad: true,
@@ -25,19 +25,26 @@ function PopularInterests() {
             {
                 breakpoint: 660,
                 settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    centerMode: true
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
                 }
             },
             {
-                breakpoint: 1000,
+                breakpoint: 1020,
                 settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2
+                    slidesToShow: 3,
+                    slidesToScroll: 3
                 }
             }
         ]
+    }
+
+    if (window.innerWidth <= 600) {
+        settings = {
+            ...settings,
+            slidesToShow: 2,
+            slidesToScroll: 2
+        }
     }
 
 
