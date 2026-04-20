@@ -111,6 +111,10 @@
     color: rgb(165, 165, 165);
 }
 
+@media (max-width: 1286px) {
+
+}
+
 /*
 
 @media (max-width: 1450px) and (min-width: 600px) {
