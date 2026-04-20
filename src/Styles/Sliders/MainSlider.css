@@ -1,9 +1,9 @@
 .hero-content-slider {
     position: relative;
     display: flex;
-    max-width: 850px;
+    width: 850px;
 
-    margin-top: 8px;
+    margin: 8px 8px 0 8px;
 }
 
 .main-slider-arrow-prev {
