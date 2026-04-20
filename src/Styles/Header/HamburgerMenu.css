@@ -1,6 +1,9 @@
 .header-top-left-menu {
     display: flex;
-    min-width: 200px;
+}
+
+.database-logo-div > a > img{
+    border-radius: 3px;
 }
 
 .hamburger-menu {
@@ -17,6 +20,8 @@
     border-radius: 20px;
 
     cursor: pointer;
+
+    transition: background-color 150ms;
 }
 
 .hb__menu-text {
@@ -185,10 +190,6 @@
     .hbm_top-flex-box {
         display: flex;
         gap: 55vw;
-    }
-
-    .header-top-left-menu {
-        display: inline;
     }
 
     .category-list>h2 {

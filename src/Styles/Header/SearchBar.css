@@ -2,8 +2,8 @@
     position: relative;
     display: flex;
     color: black;
-    min-width: 36vw;
-    height: 33px;
+    min-width: 44vw;
+    height: 34px;
 }
 
 .search-bar>span {

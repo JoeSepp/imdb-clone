@@ -38,9 +38,7 @@ function Hero(props) {
             >
                 {mainSlider.map((slide) => {
                     return (
-                        <div>
-                            <HeroContent data={slide} />
-                        </div>
+                        <HeroContent data={slide} />
                     )
                 })}
             </Slider>
