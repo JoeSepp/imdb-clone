@@ -7,6 +7,8 @@
     animation-delay: 300ms;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
+
+    max-width: 1280px;
 }
 
 @keyframes fadeIn {

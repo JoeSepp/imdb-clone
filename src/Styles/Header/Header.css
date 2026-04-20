@@ -12,6 +12,14 @@
     right: 0;
 }
 
+.navbar-inner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0px 12px;
+}
+
 .login-section {
     display: flex;
     align-items: center;

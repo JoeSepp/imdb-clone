@@ -25,26 +25,3 @@ body.hide-scroll {
 }
 */
 
-@media (max-width: 1670px) {
-
-  .main,
-  .movie,
-  .celeb,
-  .login-hero {
-    margin: 0;
-    padding: 0;
-    margin-left: 15%;
-    padding-top: 8px;
-
-  }
-}
-
-@media (max-width: 1510px) {
-
-  .main,
-  .movie,
-  .celeb,
-  .login-hero {
-    margin-left: 10%;
-  }
-}

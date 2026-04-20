@@ -40,8 +40,3 @@
     cursor: pointer;
 }
 
-@media (max-width: 1450px) and (min-width: 200px)  {
-    .hero-content-slider {
-        max-width:97%;
-    }
-}

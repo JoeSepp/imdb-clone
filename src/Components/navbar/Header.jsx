@@ -9,9 +9,11 @@ import { use, useState } from "react"
 function Header() {
     return (
         <header className="nav-header">
-            <HamburgerMenu />
-            <SearchBar />   
-            <LoginSection />
+            <div className="navbar-inner">
+                <HamburgerMenu />
+                <SearchBar />
+                <LoginSection />
+            </div>
         </header>
     )
 }

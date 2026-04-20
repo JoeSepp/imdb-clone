@@ -10,9 +10,7 @@
     animation-fill-mode: forwards;
 }
 
-.slick-slide>div {
-    margin-right: 5px;
-}
+
 
 @keyframes fadeIn {
     0% {
