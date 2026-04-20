@@ -2,6 +2,7 @@ import "../../Styles/Header/HamburgerMenu.css"
 import CategoryContainer from "./CategoryContainer.jsx"
 
 import placeholder from "../../Images/placeholder.png"
+import hamburgermenuImg from "../../Images/hamburger-menu.png"
 
 function HamburgerMenu() {
 
@@ -27,7 +28,7 @@ function HamburgerMenu() {
                     <a href="/"><img src={`${placeholder}`} width={63} /></a>
                 </div>
                 <button className="hamburger-menu" onClick={handleMenuOpening}>
-                    <img src={`${placeholder}`} height={21} />
+                    <img src={`${hamburgermenuImg}`} height={21} />
                     <span className="hb__menu-text">Menu</span>
                 </button>
             </div>
