@@ -25,7 +25,7 @@ function Hero(props) {
 
 
     return (
-        <div className="hero-section">
+        <div className="hero-section" style={{gridArea:"hero-area"}}>
             <Slider asNavFor={nav2}
                 ref={slider => (sliderRef1 = slider)}
                 className="hero-content-slider"
@@ -43,7 +43,7 @@ function Hero(props) {
                 })}
             </Slider>
 
-            <div className="hero-label-list_next">
+            <div className="hero-label-list_next" style={{gridArea:"side-hero-area"}}>
                 <span className="up-next_label-text">Up next</span>
                 <div className="up-next-div-container">
                     <Slider
@@ -62,6 +62,9 @@ function Hero(props) {
                     </Slider>
                 </div>
                 <span className="browse-trailer_text">Browse trailers &gt;</span>
+            </div>
+            <div className="page-grid-divider" style={{gridArea:"bottom-border-area"}}>
+                <div className="grid-bottom-border" ></div>
             </div>
         </div >
     )

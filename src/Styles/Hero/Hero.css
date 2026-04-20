@@ -1,5 +1,12 @@
 .hero-section {
-    display: flex;
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        "hero-area side-hero-area"
+        "bottom-border-area bottom-border-area";
+
 
     opacity: 0;
     animation-name: fadeIn;
@@ -9,6 +16,12 @@
     animation-fill-mode: forwards;
 
     max-width: 1280px;
+}
+
+.grid-bottom-border {
+    border-bottom: 1px solid #2b2b2b;
+    margin-top: 12px;
+    padding: 0px 12px 12px 12px;
 }
 
 @keyframes fadeIn {
