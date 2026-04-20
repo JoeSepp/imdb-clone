@@ -9,19 +9,6 @@
     animation-fill-mode: forwards;
 }
 
-
-@media (max-width: 1510px) and (min-width: 600px) {
-
-    .hero-section{
-        max-width: 84vw;
-    }
-
-}
-
-
-
-
-
 @keyframes fadeIn {
     0% {
         opacity: 0;

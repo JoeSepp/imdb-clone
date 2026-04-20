@@ -1,16 +1,22 @@
-.gallery-container {
+.page-content-container{
     display: flex;
     flex-direction: column;
 
+    justify-self: center;
+}
+
+
+.gallery-container {
+    display: flex;
+    flex-direction: column;
     opacity: 0;
     animation-name: fadeIn;
     animation-duration: 500ms;
     animation-delay: 300ms;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
-
 }
-
+/*
 .right-arrow-button {
     position: absolute;
     top: 50%;
@@ -25,7 +31,7 @@
 
     cursor: pointer;
 }
-
+    */
 .gallery-container::-webkit-scrollbar {
     display: none;
 }
