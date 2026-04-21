@@ -13,15 +13,7 @@ body.hide-scroll {
   overflow: hidden;
 }
 
-/*
-.main,
-.movie,
-.login-hero {
 
+main{
+  position: relative;
 }
-
-.celeb {
-  
-}
-*/
-

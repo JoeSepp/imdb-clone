@@ -17,7 +17,7 @@
     margin-right: 8px;
 }
 
-.up-next_label-header{
+.up-next_label-header {
     height: 52px;
 }
 
@@ -142,6 +142,40 @@
 
 .browse-trailer_text:hover {
     color: rgb(255, 208, 0);
+}
+
+@media (max-width:1310px) {
+    .side-slider-poster>img {
+        width: 67px;
+        height: 100px;
+    }
+
+    .next-video_data-div {
+        left: 83px;
+        bottom: 17px;
+        padding: 16px 8px 0px 8px;
+    }
+
+    .next_vid_length>svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .next_vid_interactions>span>svg {
+        height: 18px;
+        width: 18px;
+    }
+
+    .next_vid_sublabel {
+        display: none;
+    }
+
+}
+
+@media (max-width:1080px) {
+    .hero-label-list_next {
+        display: none;
+    }
 }
 
 /* Anims */

@@ -1,7 +1,7 @@
 .hero-section {
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas:
         "hero-area side-hero-area"
@@ -16,8 +16,10 @@
     animation-fill-mode: forwards;
 
     max-width: 1280px;
+    justify-items: stretch;
+    flex-wrap: wrap;
 
-    margin: 8px 0px 8px 0px;
+    margin: 8px auto 8px auto;
 }
 
 .grid-bottom-border {
@@ -36,8 +38,15 @@
     }
 }
 
-@media (max-width:1286px) {
+@media (max-width:1310px) {
     .hero-section{
-        max-width: 900px;
+        max-width: 1010px;
+    }
+}
+
+@media (max-width:1080px) {
+    .hero-section {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
     }
 }

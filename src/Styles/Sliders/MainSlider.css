@@ -1,7 +1,7 @@
 .hero-content-slider {
     position: relative;
     display: flex;
-    width: 850px;
+    max-width: 850px;
 }
 
 .main-slider-arrow-prev {
@@ -38,8 +38,15 @@
     cursor: pointer;
 }
 
-@media (max-width:1286px) {
+
+@media (max-width:1310px) {
     .hero-content-slider{
-        max-width: 550px;
+        max-width: 660px;
+    }
+}
+
+@media (max-width:1080px) {
+    .hero-content-slider {
+        max-width: 1006px;
     }
 }

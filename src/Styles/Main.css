@@ -1,8 +1,8 @@
 .page-content-container {
-    display: flex;
-    flex-direction: column;
+    display: block;
 
-    justify-self: center;
+    max-width: 1280px;
+    margin: 0px auto;
 }
 
 
@@ -66,22 +66,9 @@
     }
 }
 
-@media (max-width: 1286px) {
+@media (max-width: 1310px) {
     .page-content-container {
-        margin: 0px 116.5px 0px 116.5px ;
+        max-width: 1024px;
+        margin: 0px auto;
     }
 }
-
-/*
-@media (max-width: 1400px) and (min-width: 800px) {
-    .gallery-header{
-        font-size: 2em;
-    }
-}
-
-@media (max-width: 800px) {
-    .gallery-header{
-        font-size: 1.5em;
-    }
-}
- */
