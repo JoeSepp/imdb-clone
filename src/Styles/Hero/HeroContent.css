@@ -1,17 +1,16 @@
-
-.current-hero-label{
+.current-hero-label {
     display: block;
     position: relative;
 
     margin: 0;
 }
 
-.hero_slider-container{
+.hero_slider-container {
     display: flex;
     position: relative;
 }
 
-.hero-poster-container{
+.hero-poster-container {
     position: absolute;
     top: 275px;
     right: 668px;
@@ -21,7 +20,7 @@
 }
 
 
-.hero-poster{
+.hero-poster {
     max-width: 100%;
     min-height: 244px;
 
@@ -29,7 +28,7 @@
     border-radius: 12px;
 }
 
-.overlay-sub-grid{
+.overlay-sub-grid {
     position: relative;
     display: flex;
 
@@ -37,59 +36,62 @@
     width: 849px;
 }
 
-.hero-image-container{
+.hero-image-container {
     width: 100%;
 }
 
-.hero-image{
+.hero-image {
     width: 100%;
+
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
 }
 
-.hero_overlay-gradient{
+.hero_overlay-gradient {
     position: absolute;
 
     bottom: 0;
     top: 60%;
     left: 0;
     right: 0;
-    z-index:1;
+    z-index: 1;
     background-image: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 1) 65%);
 }
 
-.hero_svg-play-icon{
+.hero_svg-play-icon {
     margin-right: 16px;
     align-self: center;
 }
 
-.hero_overlay-figcaption{
+.hero_overlay-figcaption {
     position: absolute;
     display: flex;
     flex-direction: row;
     align-items: flex-end;
     left: 177px;
-    bottom:0px;
-    top:auto;
-    right:0px;
+    bottom: 0px;
+    top: auto;
+    right: 0px;
     margin: 16px 16px 0px 16px;
 
     z-index: 5;
 }
 
-.hero_overlay-figcaption-content{
+.hero_overlay-figcaption-content {
     position: relative;
     display: flex;
     flex-direction: column;
     text-align: left;
 }
 
-.hero_overlay-title{
+.hero_overlay-title {
     display: flex;
     text-align: left;
 
     align-items: flex-end;
 }
 
-.hero_title{
+.hero_title {
     display: block;
     font-size: 1.375rem;
     font-weight: 400;
@@ -98,31 +100,33 @@
     color: rgb(255, 255, 255, 1);
 }
 
-.hero_video-length{
+.hero_video-length {
     margin-left: 32px;
 
     font-size: 1.40rem;
 }
 
-.hero_watch-now-label{
+.hero_watch-now-label {
     font-size: 1.125rem;
     font-weight: 600;
 
     color: rgb(255, 255, 255, 0.7);
 }
 
-.hero-label-interactions{
+.hero-label-interactions {
     margin-top: 4px;
     display: block;
 
-    text-align: left;
+    text-align: start;
 }
 
-.hero-label-interactions > span {
+.hero-label-interactions>span {
     margin-right: 8px;
 }
 
-.hero-label-interactions > span > svg {
+.hero-label-interactions>span>svg {
     width: 24px;
     height: 16px;
+
+    justify-self: center;
 }
