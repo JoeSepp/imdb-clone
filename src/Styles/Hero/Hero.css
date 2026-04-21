@@ -33,3 +33,9 @@
         opacity: 1;
     }
 }
+
+@media (max-width:1286px) {
+    .hero-section{
+        max-width: 900px;
+    }
+}

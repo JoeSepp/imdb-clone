@@ -118,8 +118,10 @@
     display: inline;
 }
 
-@media (max-width: 1400px) and (min-width: 800px) {
-
+@media (max-width: 1286px){
+    .search-bar{
+        width: 450px;
+    }
 }
 
 @media (max-width: 800px) {

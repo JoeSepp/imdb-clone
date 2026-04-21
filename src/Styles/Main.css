@@ -1,4 +1,4 @@
-.page-content-container{
+.page-content-container {
     display: flex;
     flex-direction: column;
 
@@ -16,6 +16,7 @@
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
 }
+
 /*
 .right-arrow-button {
     position: absolute;
@@ -65,6 +66,13 @@
     }
 }
 
+@media (max-width: 1286px) {
+    .page-content-container {
+        margin: 0px 116.5px 0px 116.5px ;
+    }
+}
+
+/*
 @media (max-width: 1400px) and (min-width: 800px) {
     .gallery-header{
         font-size: 2em;
@@ -76,4 +84,4 @@
         font-size: 1.5em;
     }
 }
- 
+ */
