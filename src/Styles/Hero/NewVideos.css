@@ -12,13 +12,20 @@
 .flex-container-up-next {
     display: flex;
     flex-direction: column;
+
+    margin-left: 4px;
+    margin-right: 8px;
+}
+
+.up-next_label-header{
+    height: 52px;
 }
 
 .up-next_label-text {
     display: block;
     padding: 4px 0px 4px 0px;
-    font-weight: 500;
-    font-size: 1.3rem;
+    font-weight: 700;
+    font-size: 1.125rem;
     color: rgb(255, 208, 0);
 }
 
