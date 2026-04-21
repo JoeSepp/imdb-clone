@@ -2,7 +2,7 @@
     position: relative;
     display: flex;
     color: black;
-    width: 785px;
+    width: 815px;
     height: 34px;
 }
 
@@ -23,9 +23,9 @@
 
 .navbar__imdbpro-menu-toggle__name {
     width: 60px;
-    padding: 10px 15px;
+    padding: 10px 7px;
     margin-left: 10px;
-    border-radius: 15px;
+    border-radius: 5px;
 
     color: white;
     cursor: pointer;

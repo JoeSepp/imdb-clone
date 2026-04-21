@@ -16,6 +16,8 @@
     animation-fill-mode: forwards;
 
     max-width: 1280px;
+
+    margin: 8px 0px 8px 0px;
 }
 
 .grid-bottom-border {

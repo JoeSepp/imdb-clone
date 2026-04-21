@@ -1,5 +1,6 @@
 .header-top-left-menu {
     display: flex;
+    gap: 15px;
 }
 
 .database-logo-div > a > img{
