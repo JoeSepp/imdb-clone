@@ -28,13 +28,15 @@
     padding: 0px 16px;
 }
 
+.side-slider-poster {
+    padding-top: 16px;
+}
+
 .side-slider-poster>img {
     width: 88px;
     height: 130px;
     object-fit: cover;
-    border-radius: 20px;
-
-    padding-top: 16px;
+    border-radius: 12px;
 }
 
 .next-video_data-div {
@@ -84,7 +86,7 @@
     margin: 0;
 }
 
-.next_vid_header>span{
+.next_vid_header>span {
     line-height: 20px;
     max-height: 40px;
     text-align: start;
