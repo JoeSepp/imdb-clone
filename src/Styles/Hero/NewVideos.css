@@ -173,8 +173,19 @@
 }
 
 @media (max-width:1080px) {
-    .hero-label-list_next {
+    .flex-container-up-next {
         display: none;
+    }
+
+    .hero-label-list_next{
+        padding: 16px 16px 0px 16px;
+        margin: 0;
+    }
+
+    .browse-trailer_text{
+        display: block;
+        margin: 0;
+        padding: 0;
     }
 }
 

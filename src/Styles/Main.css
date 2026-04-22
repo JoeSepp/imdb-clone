@@ -1,5 +1,6 @@
 .page-content-container {
     display: block;
+    position: relative;
 
     max-width: 1280px;
     margin: 0px auto;
@@ -70,5 +71,12 @@
     .page-content-container {
         max-width: 1024px;
         margin: 0px auto;
+    }
+}
+
+@media (max-width:1080px) {
+    .page-content-container{
+        margin: 0px;
+        max-width: 100%;
     }
 }

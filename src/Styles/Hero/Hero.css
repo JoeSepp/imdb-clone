@@ -1,5 +1,6 @@
 .hero-section {
     display: grid;
+    position: relative;
 
     grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr;
@@ -39,14 +40,18 @@
 }
 
 @media (max-width:1310px) {
-    .hero-section{
+    .hero-section {
         max-width: 1010px;
     }
 }
 
 @media (max-width:1080px) {
     .hero-section {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
+        max-width: 100%;
+        display: flex;
+    }
+
+    .grid-bottom-border {
+        margin-top: 0px;
     }
 }

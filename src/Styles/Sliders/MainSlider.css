@@ -40,13 +40,14 @@
 
 
 @media (max-width:1310px) {
-    .hero-content-slider{
+    .hero-content-slider {
         max-width: 660px;
     }
 }
 
 @media (max-width:1080px) {
     .hero-content-slider {
-        max-width: 1006px;
+        max-width: 1062px;
+        margin: 0px 8px;
     }
 }
