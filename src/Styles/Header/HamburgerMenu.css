@@ -3,36 +3,53 @@
     gap: 15px;
 }
 
+.database-logo-div {
+    display: block;
+    padding: 0;
+    margin-right: 8px;
+
+    max-height: 33px;
+}
+
+.database-logo-div >a {
+    position: relative;
+}
+
 .database-logo-div > a > img{
     border-radius: 3px;
 }
 
 .hamburger-menu {
     display: flex;
-    align-items: center;
     background-color: transparent;
 
     border: none;
-
-    margin-right: 8px;
-    padding-left: 10px;
-    padding-right: 18px;
-
     border-radius: 20px;
 
+    padding: 0;
     cursor: pointer;
 
     transition: background-color 150ms;
 }
 
-.hb__menu-text {
-    font-weight: 600;
+.hamburger-menu_button{
+    display: flex;
+    padding: 0px 16px;
+    
+
+    align-items: center;
+    align-content: center;
 }
 
-.hamburger-menu>img {
-    filter: invert();
-    padding: 5px;
-    border-radius: 5px;
+.hb__menu-text {
+    font-weight: 600;
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+.hamburger-menu_button>svg {
+    height: auto;
+    width: auto;
 }
 
 .hamburger-menu:hover {

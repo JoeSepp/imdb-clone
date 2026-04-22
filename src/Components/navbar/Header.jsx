@@ -8,13 +8,13 @@ import { use, useState } from "react"
 
 function Header() {
     return (
-        <header className="nav-header">
+        <nav className="nav-header">
             <div className="navbar-inner">
                 <HamburgerMenu />
                 <SearchBar />
                 <LoginSection />
             </div>
-        </header>
+        </nav>
     )
 }
 
