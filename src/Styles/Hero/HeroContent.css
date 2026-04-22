@@ -1,11 +1,11 @@
 .current-hero-label {
     display: block;
     position: relative;
-    margin: 0;
+    margin: 1px;
 }
 
 .hero_slider-container {
-    display: flex;
+    display: block;
     position: relative;
 }
 
@@ -31,7 +31,7 @@
     display: flex;
 
     padding-bottom: 70px;
-    width: 849px;
+    width: 100%;
 }
 
 .hero-image-container {
