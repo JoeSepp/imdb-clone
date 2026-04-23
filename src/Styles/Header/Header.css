@@ -19,53 +19,97 @@
     padding: 12px 0px;
 }
 
-.login-section {
+.navbar_imdbpro {
+    position: relative;
     display: flex;
+    padding: 0px 16px;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 2.25rem;
+    min-width: 3rem;
+    max-width: 100%;
+}
+
+.navbar_imdbpro>svg {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar_divider {
+    border: 1px solid rgb(255, 255, 255, 0.16);
+    height: 32px;
+    margin: 0px 8px;
+}
+
+.navbar_watchlist {
+    display: flex;
+    padding: 0px 16px;
+
+    min-height: 32px;
+    justify-content: center;
     align-items: center;
 }
 
-.login-section>ul {
-    display: flex;
-    text-wrap: no-wrap;
-    list-style: none;
-
-    color: white;
-    font-weight: 500;
-    font-size: 0.9rem;
-
-    padding: 0;
-    margin: 0;
-
-    margin-left: 5px;
-    padding-left: 7px;
-    border-left: solid 2px rgba(54, 54, 54, 0.815);
+.navbar_watchlist>svg {
+    margin-right: 4px;
 }
 
-.login-box,
-.use-app-box {
-    padding: 5px 13px;
-    transition: background-color 150ms;
+.navbar_watchlist>span {
+    margin: 0px;
+}
 
-    margin-left: 8px;
+.navbar_login {
+    display: block;
+}
+
+.navbar_login>a {
+    position: relative;
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 2.25rem;
+    min-width: 3rem;
+
+    margin: 0;
+    padding: 0px 16px;
+}
+
+.navbar_login>a>span {
+    text-wrap: nowrap;
+    display: block;
+    margin: 0;
+}
+
+.navbar_localization {
+    display: flex;
+    min-height: 32px;
+
+    justify-content: center;
+    align-items: center;
+
+    padding-left: 16px;
+    padding-right: 4px;
+}
+
+.navbar_localization > span{
+    margin: 0;
+}
+
+.hover_effect {
+    cursor: pointer;
     border-radius: 20px;
 
-    cursor: pointer;
+    transition: background-color 150ms;
 }
 
-.use-app-box {
-    color: black;
-    background-color: rgb(255, 208, 0);
-}
-
-.login-box:hover {
+.hover_effect:hover {
     background-color: rgba(78, 78, 78, 0.363);
 }
-
-.use-app-box:hover {
-    background-color: rgb(189, 154, 0);
-}
-
-@media (max-width: 1400px) and (min-width: 800px) {}
 
 @media (max-width: 600px) {
     .login-section {
@@ -77,8 +121,7 @@
         display: none;
     }
 
-    .nav-header{
+    .nav-header {
         padding: 0;
     }
 }
-
