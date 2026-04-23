@@ -147,9 +147,17 @@ footer {
         flex-direction: column;
     }
 
+    .footer-helpful-links{
+        margin: 0px 50px;
+        text-wrap: nowrap;
+    }
+
     .footer-helpful-links>div>ul {
         gap: 5px;
         font-size: 0.8em;
-    }
+        padding: 0;
 
+        flex-wrap: wrap;
+    }
 }
+
