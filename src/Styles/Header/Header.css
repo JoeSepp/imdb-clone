@@ -16,6 +16,11 @@
     align-items: center;
     justify-content: center;
 
+    width: 100%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+
     padding: 12px 0px;
 }
 
@@ -111,17 +116,29 @@
     background-color: rgba(78, 78, 78, 0.363);
 }
 
-@media (max-width: 600px) {
-    .login-section {
-        display: flex;
-        align-items: center;
+@media (max-width:1310px) {
+    .navbar-inner{
+        max-width: 1005px;
     }
+    
+}
 
-    .login-section {
+@media (max-width:1080px) {
+    .navbar_imdbpro{
         display: none;
     }
 
-    .nav-header {
-        padding: 0;
+    .navbar_watchlist{
+        display: none;
     }
+
+    .navbar_localization{
+        display: none;
+    }
+
+    .navbar-inner{
+        margin-left: 8px;
+        margin-right: auto;
+    }
+    
 }

@@ -140,11 +140,8 @@
 }
 
 
-@media (max-width: 1400px) and (min-width: 800px) {}
-
-@media (max-width: 800px) {
-    .search-menu-wrapper {
+@media (max-width: 600px) {
+    .search-selector {
         display: none;
     }
-
 }
