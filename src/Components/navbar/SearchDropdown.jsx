@@ -4,15 +4,28 @@ import "../../Styles/Header/SearchDropdown.css"
 function SearchDropdown(props) {
     const [dropdownText, setDropdownText] = useState("All")
 
-    function openMenu() {
-        if (document.querySelector(".search-selector-menu").classList.contains("open-menu")) {
-            document.querySelector(".search-selector-menu").classList.remove("open-menu")
-            rotateBackwardsSVG()
-        } else {
+    function openMenu(e) {
+        if (e.target.classList.contains("search-menu-wrapper")) {
+            document.querySelector(".search-selector-menu").classList.add("open-menu");
+            rotateForwadsSVG()
+        } else if (e.target.classList.contains("category-selector-button")) {
+            document.querySelector(".search-selector-menu").classList.add("open-menu");
+            rotateForwadsSVG()
+        } else if (e.target.classList.contains("sm_btn-txt")) {
+            document.querySelector(".search-selector-menu").classList.add("open-menu");
+            rotateForwadsSVG()
+        } else if (e.target.classList.contains("ipc-icon--arrow-drop-down")) {
             document.querySelector(".search-selector-menu").classList.add("open-menu");
             rotateForwadsSVG()
         }
+        else {
+            document.querySelector(".search-selector-menu").classList.remove("open-menu")
+            rotateBackwardsSVG()
+        }
     }
+
+    document.addEventListener("click", openMenu)
+
 
     function changeSelected(prev, newOne) {
         const li = document.querySelectorAll(".list-item")
@@ -41,15 +54,11 @@ function SearchDropdown(props) {
     }
 
     function rotateBackwardsSVG() {
-        document.querySelector(".ipc-icon--arrow-drop-down").classList.add("rotate-back")
-        setTimeout(() => {
-            document.querySelector(".ipc-icon--arrow-drop-down").classList.remove("rotate")
-            document.querySelector(".ipc-icon--arrow-drop-down").classList.remove("rotate-back")
-        }, 300)
+        document.querySelector(".ipc-icon--arrow-drop-down").classList.remove("rotate")
     }
 
     return (
-        <span className="search-menu-wrapper" onClick={openMenu}>
+        <span className="search-menu-wrapper">
             <div className="category-selector-button">
                 <span className="sm_btn-txt">{dropdownText}</span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="ipc-icon ipc-icon--arrow-drop-down ipc-btn__icon ipc-btn__icon--post searchCatSelector-button-post-icon" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M8.71 11.71l2.59 2.59c.39.39 1.02.39 1.41 0l2.59-2.59c.63-.63.18-1.71-.71-1.71H9.41c-.89 0-1.33 1.08-.7 1.71z"></path></svg>
