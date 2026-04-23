@@ -35,7 +35,7 @@
     margin-top: -10px;
 }
 
-@media (max-width:1020px) {
+@media (max-width:1080px) {
 
     .movie-gallery-container::before{
         position:absolute;
@@ -46,6 +46,12 @@
         right: 0px;
 
         background-color: #121212;
+    }
+
+     .header-subtext{
+        margin-left: 20px;
+        color: rgb(255, 255, 255, 0.67);
+        z-index: 1;
     }
     
 }

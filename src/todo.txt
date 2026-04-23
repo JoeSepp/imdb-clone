@@ -1,2 +1,2 @@
-1. fixnout navbar výšku a barvu
-2. fixnout responsivitu stránky (po updatu hero sekce se to "trochu" rozbilo)
+1. fix celebrity slider (width nesedí)
+2. Featured today a More to explore slider v menším rozlišení okna taky špatná width

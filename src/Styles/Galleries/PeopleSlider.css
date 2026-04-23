@@ -63,3 +63,12 @@
 
     margin-bottom: 10px;
 }
+
+@media (max-width:1080px) {
+    .container-header,
+    .people-gallery-heading{
+        margin-left: 20px;
+    }
+
+   
+}
