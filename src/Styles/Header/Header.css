@@ -76,4 +76,9 @@
     .login-section {
         display: none;
     }
+
+    .nav-header{
+        padding: 0;
+    }
 }
+

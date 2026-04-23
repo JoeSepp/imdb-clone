@@ -6,7 +6,7 @@
     flex-direction: column;
     /* background-color: rgb(12, 12, 12); */
 
-    max-width: 1200px;
+    width: 100%;
 }
 
 
@@ -42,8 +42,8 @@
         content: '';
         top: -15px;
         bottom: -15px;
-        left: -50px;
-        right: -50px;
+        left: 0px;
+        right: 0px;
 
         background-color: #121212;
     }
