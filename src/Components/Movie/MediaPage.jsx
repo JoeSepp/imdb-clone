@@ -96,11 +96,13 @@ function MoviePage() {
 
     return (
         <div className="movie-page-div">
-            <MediaHero details={details} credits={credits} cast={cast} />
-            {mediaType === "movie" && cast ? <MovieAbout cast={cast} details={details} /> : <TVAbout cast={cast} details={details} />}
-            <SlickMovieGallery />
-            <MovieReviews id={id} mediaType={mediaType} />
-            <RecommendShows />
+            <div className="page-content-container">
+                <MediaHero details={details} credits={credits} cast={cast} />
+                {mediaType === "movie" && cast ? <MovieAbout cast={cast} details={details} /> : <TVAbout cast={cast} details={details} />}
+                <SlickMovieGallery />
+                <MovieReviews id={id} mediaType={mediaType} />
+                <RecommendShows />
+            </div>
         </div>
     )
 

@@ -7,20 +7,25 @@
     animation-duration: 500ms;
     animation-timing-function: ease-in;
 
+    
+
 }
 
 .movie-hero-section::before {
     content: '';
     position: absolute;
-    background-image: linear-gradient(90deg, rgb(16, 16, 16) 45%, rgba(16, 16, 16, 0.281), rgba(16, 16, 16, 0.712));
+    background-image: linear-gradient(90deg, rgb(16, 16, 16) 25%, rgba(16, 16, 16, 0.581), rgba(16, 16, 16, 0.212));
     height: 550px;
 
     z-index: 1;
-    left: -520px;
+    left: 0;
     right: 0;
 
 
     box-shadow: 1px 1px 25px rgb(36, 36, 36);
+
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
 }
 
 .backdrop-image {
@@ -28,6 +33,9 @@
     max-width: 1920px;
 
     overflow: hidden;
+
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 
 .movie-details-container {
@@ -46,6 +54,7 @@
 .movie-details-container>img {
     border-radius: 25px;
     height: 450px;
+    margin-left: -3px;
 }
 
 .movie-details {
@@ -71,7 +80,7 @@
 }
 
 .movie-details-header>h2 {
-    font-size: 2.3rem;
+    font-size: 2rem;
     color: white;
 }
 

@@ -11,7 +11,9 @@ function Celeb() {
                 <Header />
             </div>
             <div className="celeb">
+                <div className="page-content-container">
                 <CelebHero />
+                </div>
             </div>
             <div>
                 <Footer />
