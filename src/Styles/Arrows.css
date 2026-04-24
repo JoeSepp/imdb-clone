@@ -36,3 +36,11 @@
 .prev-arrow-cstm-slick>svg:hover {
     color: rgb(255, 208, 0);
 }
+
+@media (max-width:600px) {
+    .prev-arrow-cstm-slick,
+    .next-arrow-cstm-slick{
+        display: none;
+    }
+    
+}
