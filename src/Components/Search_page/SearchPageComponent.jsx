@@ -14,7 +14,8 @@ function SearchPageComponent() {
     const [numOfPages, setNumOfPages] = useState()
     const [pages, setPages] = useState([1])
     const [prevPage, setPrevPage] = useState(pageNumber)
-    const [prevType, setPrevType] = useState(searchType)
+    const [prevQuery, setPrevQuery] = useState(searchQuery)
+
 
     const linkStyle = {
         color: "white",
@@ -30,7 +31,6 @@ function SearchPageComponent() {
                 setIsLoading(false)
             })
             .catch(err => console.error(err));
-
     }, [searchQuery, pageNumber])
 
     function handleSetPages(num) {
@@ -52,9 +52,9 @@ function SearchPageComponent() {
 
     }, [numOfPages])
 
-    if (prevPage !== pageNumber || prevType !== searchType ) {
+    if (prevPage !== pageNumber || prevQuery !== searchQuery ) {
         setPrevPage(pageNumber)
-        setPrevType(searchType)
+        setPrevQuery(searchQuery)
         window.location.reload()
         window.location.scrollTop()
     }
