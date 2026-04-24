@@ -1,6 +1,7 @@
 .prev-arrow-cstm-slick {
     position: absolute;
     left: 0;
+    right: auto;
     top: 30%;
 
     background-color: rgba(0, 0, 0, 0.356);
