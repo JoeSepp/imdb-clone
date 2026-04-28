@@ -142,7 +142,7 @@ function NavSearchBar() {
                                                     <div className="searchResult__title">{result.name}</div>
                                                     <div className="searchResult__metadata">{result.first_air_date.slice(0, 4)}</div>
                                                 </div>}
-                                            {result.media_type === "person" &&
+                                            {(result.media_type === "person" || searchType==="person" )&&
                                                 <Link to={`/person/${result.id}`} style={{ textDecoration: "none", color: "white" }}>
                                                     <div className="searchResult--info__container">
                                                         <div className="searchResult__title">{result.name}</div>
