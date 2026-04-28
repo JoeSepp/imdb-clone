@@ -54,35 +54,6 @@
     text-wrap-mode: nowrap;
 }
 
-/* ANIMACE */
-
-@keyframes rotateSVG {
-    0% {
-        transform: rotateX(0deg);
-    }
-
-    100% {
-        transform: rotateX(180deg);
-    }
-}
-
-@keyframes rotateBack {
-    0% {
-        transform: rotateX(180deg);
-    }
-
-    100% {
-        transform: rotateX(0);
-    }
-}
-
-
-@media (max-width: 600px) {
-    .search-selector {
-        display: none;
-    }
-}
-
 .nav-search-form__categories {
     display: flex;
     flex-direction: row;
@@ -97,10 +68,12 @@
 
 .category-selector-text {
     display: inline-flex;
+
+    transition: background-color 100ms;
 }
 
 .category-selector-text:hover {
-    background-color: red;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .searchCatSelector-menu {
@@ -185,4 +158,81 @@
     background-color: #313131;
 }
 
-/*  color: #F5C518; orandž*/
+/* Automatické vyhledávání*/
+.autosuggest_suggestions-container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(100% + 0.25rem);
+    bottom: auto;
+
+    border-radius: 4px;
+
+    z-index: 1;
+    background-color: rgb(31, 31, 31)
+}
+
+.suggestions_results-list {
+    display: flex;
+    flex-direction: column;
+
+    padding: 0;
+    margin: 0;
+
+
+}
+
+.searchResult--image {
+    max-height: 71px;
+    max-width: 48px;
+
+
+}
+
+.searchResult--image>img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 8px;
+}
+
+.suggestions__result {
+    display: flex;
+    flex-direction: row;
+
+    border-radius: 4px;
+
+    padding: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+    transition: background-color 150ms;
+    cursor: pointer;
+
+    font-size: 1rem;
+}
+
+.suggestions__result:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+}
+
+.searchResult--info__container {
+    margin-left: 16px;
+    text-align: left;
+}
+
+.searchResult__title {
+    letter-spacing: 0.5px;
+    font-weight: 400;
+}
+
+.searchResult__metadata {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.875rem;
+    letter-spacing: 0.25px;
+}
+
+@media (max-width: 600px) {
+    .search-selector {
+        display: none;
+    }
+}

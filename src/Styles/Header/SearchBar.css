@@ -44,7 +44,7 @@
 }
 
 .search-bar--focused {
-    outline: 3px solid;
+    outline: 2px solid;
     outline-color: #E2B616;
 }
 
