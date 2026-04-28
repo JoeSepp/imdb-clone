@@ -52,10 +52,14 @@ function NavSearchBar() {
         const response = fetch(`https://api.themoviedb.org/3/search/${searchType}?query=${inputText}&include_adult=false&language=en-US&page=1'`, APIoptions)
             .then(res => res.json())
             .then(res => setDatabaseData(res.results.slice(0, 8)))
+
+            setTimeout(()=>{
+                setIsLoading(false)
+            }, 1000)
     }
 
     function suggestionSearchHandler(e) {
-        if (e.target.value) {
+        if (e.target.value.length > 1) {
             searchDB(e.target.value)
         } else {
             setDatabaseData([])
@@ -120,7 +124,7 @@ function NavSearchBar() {
                         <input className="search-box-input" type="text" name="movie-finder" autoComplete="off" placeholder="search IMDB" onChange={suggestionSearchHandler} required />
                         <div className="autosuggest_suggestions-container" role="listbox">
                             <ul className="suggestions_results-list">
-                                {isFocused &&
+                                {!isLoading && isFocused &&
                                     databaseData.map((result) => {
                                         return (<li role="option" className={`suggestions__result suggestions__result-${result.id}`} key={result.id}>
                                             <div className="searchResult--image">
