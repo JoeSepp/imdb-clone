@@ -4,17 +4,9 @@ import SearchPageComponent from "../Components/Search_page/SearchPageComponent"
 
 function SearchResults() {
     return (
-        <>
-            <div>
-                <Header />
-            </div>
-            <div className="movie">
-                <SearchPageComponent/>
-            </div>
-            <div>
-                <Footer />
-            </div>
-        </>
+        <div className="movie">
+            <SearchPageComponent />
+        </div>
     )
 }
 

@@ -6,19 +6,9 @@ function LoginPage() {
 
 
     return (
-        <>
-            <div>
-                <Header />
-            </div>
-            <div className="login-hero">
-                <LoginHero />
-            </div>
-            <div>
-                <Footer/>
-            </div>
-
-        
-        </>
+        <div className="login-hero">
+            <LoginHero />
+        </div>
     )
 }
 

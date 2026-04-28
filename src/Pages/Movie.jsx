@@ -7,19 +7,11 @@ function Movie() {
     const [hasCollection, setHasCollection] = useState(false)
     const [movieId, setMovieId] = useState()
     const [mediaType, setMediaType] = useState('movie')
-    
+
     return (
-        <>
-            <div>
-                <Header />
-            </div>
-            <div className="movie">
-                <MediaPage />
-            </div>
-            <div>
-                <Footer />
-            </div>
-        </>
+        <div className="movie">
+            <MediaPage />
+        </div>
     )
 }
 

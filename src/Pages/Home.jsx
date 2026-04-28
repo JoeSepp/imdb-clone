@@ -5,17 +5,11 @@ import Footer from "../Components/Footer.jsx"
 
 function Home() {
     return (
-        <div>
-            <div className="header">
-                <Header />
-            </div>
-            <div className="main">
-                <Main />
-            </div>
-            <div className="footer">
-                <Footer />
-            </div>
+
+        <div className="main">
+            <Main />
         </div>
+
     )
 }
 
