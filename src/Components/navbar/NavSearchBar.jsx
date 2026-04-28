@@ -14,8 +14,6 @@ function NavSearchBar() {
     const [isLoading, setIsLoading] = useState(true)
     const [isFocused, setIsFocused] = useState(false)
 
-
-
     const options = [
         {
             label: "All", value: "multi", icon: <svg data-value="All" data-shortvalue="df" xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="ipc-icon ipc-icon--search searchCatSelector__itemIcon" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
@@ -54,17 +52,13 @@ function NavSearchBar() {
         const response = fetch(`https://api.themoviedb.org/3/search/${searchType}?query=${inputText}&include_adult=false&language=en-US&page=1'`, APIoptions)
             .then(res => res.json())
             .then(res => setDatabaseData(res.results.slice(0, 8)))
-
-        setTimeout(() => {
-            setIsLoading(false)
-        }, 1000)
-
-        console.log(databaseData)
     }
 
     function suggestionSearchHandler(e) {
-        if (e.target.value.length > 0) {
+        if (e.target.value) {
             searchDB(e.target.value)
+        } else {
+            setDatabaseData([])
         }
     }
 
@@ -75,9 +69,7 @@ function NavSearchBar() {
     function handleFocus(e) {
         if (e.target.classList.contains("search-box-input")) {
             document.querySelector(".search-bar").classList.add("search-bar--focused")
-            setTimeout(() => {
-                setIsFocused(true)
-            }, 1000)
+            setIsFocused(true)
         } else {
             document.querySelector(".search-bar").classList.remove("search-bar--focused")
             setIsFocused(false)
@@ -87,7 +79,6 @@ function NavSearchBar() {
 
 
     return (
-
         <div className="suggestion-search-container">
             <Form className="search-bar" method="post" role="search" action="/test/" name="nav-search-form">
                 <div className="category-selector-button" onClick={handleMenuSelector}>
@@ -126,30 +117,35 @@ function NavSearchBar() {
                 </div>
                 <div className="search_form-input_container" >
                     <div className="input_container">
-                        <input className="search-box-input" type="text" name="movie-finder" placeholder="search IMDB" onChange={suggestionSearchHandler} required />
+                        <input className="search-box-input" type="text" name="movie-finder" autoComplete="off" placeholder="search IMDB" onChange={suggestionSearchHandler} required />
                         <div className="autosuggest_suggestions-container" role="listbox">
                             <ul className="suggestions_results-list">
                                 {isFocused &&
                                     databaseData.map((result) => {
                                         return (<li role="option" className={`suggestions__result suggestions__result-${result.id}`} key={result.id}>
                                             <div className="searchResult--image">
-                                                {result.poster_path ? <img src={`https://media.themoviedb.org/t/p/w300_and_h450_bestv2/${result.poster_path}`} /> : <img src={`https://media.themoviedb.org/t/p/w300_and_h450_bestv2/${result.profile_path}`} />}
+                                                {result.poster_path ? <img src={`https://media.themoviedb.org/t/p/w300_and_h450_bestv2/${result.poster_path}`} key={`imgId-${result.id}`} /> : <img src={`https://media.themoviedb.org/t/p/w300_and_h450_bestv2/${result.profile_path}`} />}
                                             </div>
-                                            {result.media_type === "movie" || searchType === "movie" &&
-                                                <div className="searchResult--info__container">
-                                                    <div className="searchResult__title">{result.title}</div>
-                                                    <div className="searchResult__metadata">{result.release_date.slice(0, 4)}</div>
-                                                </div>}
+                                            {(result.media_type === "movie" || searchType === "movie") &&
+                                                <Link to={`/${result.media_type ? result.media_type : searchType}/${result.id}`} style={{ textDecoration: "none", color: "white" }}>
+                                                    <div className="searchResult--info__container">
+                                                        <div className="searchResult__title">{result.title}</div>
+                                                        <div className="searchResult__metadata">{result.release_date.slice(0, 4)}</div>
+                                                    </div>
+                                                </Link>}
                                             {result.media_type === "tv" &&
                                                 <div className="searchResult--info__container">
                                                     <div className="searchResult__title">{result.name}</div>
                                                     <div className="searchResult__metadata">{result.first_air_date.slice(0, 4)}</div>
                                                 </div>}
                                             {result.media_type === "person" &&
-                                                <div className="searchResult--info__container">
-                                                    <div className="searchResult__title">{result.name}</div>
-                                                    <div className="searchResult__metadata">{result.known_for_department}</div>
-                                                </div>}
+                                                <Link to={`/person/${result.id}`} style={{ textDecoration: "none", color: "white" }}>
+                                                    <div className="searchResult--info__container">
+                                                        <div className="searchResult__title">{result.name}</div>
+                                                        <div className="searchResult__metadata">{result.known_for_department}</div>
+                                                    </div>
+                                                </Link>}
+
                                         </li>
                                         )
                                     })
