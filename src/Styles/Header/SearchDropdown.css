@@ -101,6 +101,8 @@
 
 .searchCatSelector-menu-open {
     display: block;
+
+    animation: grow 100ms forwards;
 }
 
 .searchCatSelector {
@@ -169,7 +171,7 @@
     border-radius: 4px;
 
     z-index: 1;
-    background-color: rgb(31, 31, 31)
+    background-color: rgb(31, 31, 31);
 }
 
 .suggestions_results-list {
@@ -178,8 +180,6 @@
 
     padding: 0;
     margin: 0;
-
-
 }
 
 .searchResult--image {
@@ -229,6 +229,28 @@
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.875rem;
     letter-spacing: 0.25px;
+}
+
+@keyframes grow {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
 }
 
 @media (max-width: 600px) {

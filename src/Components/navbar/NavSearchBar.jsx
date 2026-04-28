@@ -13,6 +13,7 @@ function NavSearchBar() {
     const [databaseData, setDatabaseData] = useState([{}])
     const [isLoading, setIsLoading] = useState(true)
     const [isFocused, setIsFocused] = useState(false)
+    const [searchedValue, setSearchedValue] = useState("")
 
     const options = [
         {
@@ -48,18 +49,21 @@ function NavSearchBar() {
     };
 
     async function searchDB(inputText) {
-        console.log(inputText)
         const response = fetch(`https://api.themoviedb.org/3/search/${searchType}?query=${inputText}&include_adult=false&language=en-US&page=1'`, APIoptions)
             .then(res => res.json())
             .then(res => setDatabaseData(res.results.slice(0, 8)))
-
-            setTimeout(()=>{
-                setIsLoading(false)
-            }, 1000)
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 1000)
     }
+
+    useEffect(() => {
+        searchDB(searchedValue)
+    }, [searchType])
 
     function suggestionSearchHandler(e) {
         if (e.target.value.length > 1) {
+            setSearchedValue(e.target.value)
             searchDB(e.target.value)
         } else {
             setDatabaseData([])
@@ -137,24 +141,26 @@ function NavSearchBar() {
                                                         <div className="searchResult__metadata">{result.release_date.slice(0, 4)}</div>
                                                     </div>
                                                 </Link>}
-                                            {result.media_type === "tv" &&
-                                                <div className="searchResult--info__container">
-                                                    <div className="searchResult__title">{result.name}</div>
-                                                    <div className="searchResult__metadata">{result.first_air_date.slice(0, 4)}</div>
-                                                </div>}
-                                            {(result.media_type === "person" || searchType==="person" )&&
+                                            {(result.media_type === "tv" || searchType === "tv") &&
+                                                <Link to={`/tv/${result.id}`} style={{ textDecoration: "none", color: "white" }}>
+                                                    <div className="searchResult--info__container">
+                                                        <div className="searchResult__title">{result.name}</div>
+                                                        <div className="searchResult__metadata">{result.first_air_date.slice(0, 4)}</div>
+                                                    </div>
+                                                </Link>}
+                                            {(result.media_type === "person" || searchType === "person") &&
                                                 <Link to={`/person/${result.id}`} style={{ textDecoration: "none", color: "white" }}>
                                                     <div className="searchResult--info__container">
                                                         <div className="searchResult__title">{result.name}</div>
                                                         <div className="searchResult__metadata">{result.known_for_department}</div>
                                                     </div>
                                                 </Link>}
-
                                         </li>
                                         )
                                     })
                                 }
                             </ul>
+
                         </div>
                     </div>
                 </div>
