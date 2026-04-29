@@ -158,26 +158,67 @@ function NavSearchBar() {
                         <input className="search-box-input" type="text" name="movie-finder" autoComplete="off" placeholder="search IMDB" onChange={suggestionSearchHandler} required />
                         <div className="autosuggest_suggestions-container" role="listbox">
                             <ul className="suggestions_results-list">
-                                {!isLoading && isFocused &&
-                                    databaseData.map((result, index) => {
-                                        return (<li role="option" className={`suggestions__result suggestions__result-${result.id}`} key={result.id}>
-                                            <div className="searchResult--image">
-                                                {result.poster_path ? <img src={`https://media.themoviedb.org/t/p/w300_and_h450_bestv2/${result.poster_path}`} key={`imgId-${result.id}`} /> : <img src={`https://media.themoviedb.org/t/p/w300_and_h450_bestv2/${result.profile_path}`} />}
-                                            </div>
-                                            {(result.media_type === "movie" || searchType === "movie") &&
-                                                <Link to={`/${result.media_type ? result.media_type : searchType}/${result.id}`} style={{ textDecoration: "none", color: "white" }}>
-                                                    <SearchResultComponent title={result.title} releaseDate={result.release_date} searchType={result.media_type ? result.media_type : searchType} trailers={videoTrailers} index={index} />
-                                                </Link>}
-                                            {(result.media_type === "tv" || searchType === "tv") &&
-                                                <Link to={`/tv/${result.id}`} style={{ textDecoration: "none", color: "white" }}>
-                                                    <SearchResultComponent title={result.name} releaseDate={result.first_air_date} searchType={result.media_type ? result.media_type : searchType}/>
-                                                </Link>}
-                                            {(result.media_type === "person" || searchType === "person") &&
-                                                <Link to={`/person/${result.id}`} style={{ textDecoration: "none", color: "white" }}>
-                                                    <SearchResultComponent title={result.name} searchType={result.media_type ? result.media_type : searchType} knownForDepartment={result.known_for_department} />
-                                                </Link>}
-                                        </li>
+
+                                {!isLoading &&
+                                    isFocused &&
+                                    databaseData.map((r, index) => {
+                                        const type = r.media_type || searchType;
+                                        const imagePath = r.poster_path || r.profile_path;
+                                        const imageUrl = `https://media.themoviedb.org/t/p/w300_and_h450_bestv2/${imagePath}`;
+
+
+                                        let componentProps = {};
+                                        let linkPath = `/${type}/${r.id}`
+
+                                        if (type === "movie") {
+                                            componentProps = {
+                                                title: r.title,
+                                                releaseDate: r.release_date,
+                                                searchType: type,
+                                                trailers: videoTrailers,
+                                                index                                                                                 
+                                            };
+                                        }
+
+
+                                        if (type === "tv") {
+                                            componentProps = {
+                                                title: r.name,
+                                                releaseDate: r.first_air_date,
+                                                searchType: type
+                                            }
+                                        }
+
+                                        if (type === "person") {
+                                            componentProps = {
+                                                title: r.name,
+                                                searchType: type,
+                                                knownForDepartment: r.known_for_department
+                                            }
+                                        }
+
+                                        return (
+                                            <li
+                                                role="option"
+                                                className={`suggestions__result suggestions__result-${index}`}
+                                                key={r.id}
+                                            >
+                                                <div className="searchResult--image">
+                                                    <img src={imageUrl} alt={r.name || r.title} />
+                                                </div>
+
+                                                <Link
+                                                    to={linkPath}
+                                                    style={{textDecoration: "none", color:"white"}}
+                                                >
+
+                                                   <SearchResultComponent {...componentProps} />
+
+                                                </Link>
+                                            </li>
+
                                         )
+                               
                                     })
                                 }
                             </ul>

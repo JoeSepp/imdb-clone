@@ -1,3 +1,45 @@
-.clips-container > img {
-    width: 200px;
+.searchResult--info_first_suggestion-div{
+    display: flex;
+
+
+    justify-content:space-between;
+    align-content: space-between;
+}
+
+.clips-container {
+    display: flex;
+
+    gap: 25px;
+    margin-left: 2rem;
+}
+
+.clips-container > span {
+    display: flex;
+    flex-direction: column;
+
+    text-align: start;
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: rgba(255,255,255, 0.87);
+
+    border-radius: 12px;
+
+    transition: 200ms;
+}
+
+.clips-container > span:hover{
+    color: white;
+    font-size: 0.92rem;
+}
+
+.clips-container > span > img {
+    max-width: 200px;
+
+    border-radius: 12px;
+
+    transition: opacity 200ms;
+}
+
+.clips-container > span > img:hover {
+    opacity: 0.5;
 }

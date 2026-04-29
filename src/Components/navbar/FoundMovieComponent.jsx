@@ -29,21 +29,28 @@ function SearchResultComponent(props) {
     }
 
     if (searchType === "movie") {
-        if (index < 2) {
-
+        if (index < 1) {
             getVideosForResult(trailers)
+
+            console.log(trailers)
             return (
-                <>
+                <div className="searchResult--info_first_suggestion-div">
                     <div className="searchResult--info__container">
                         <div className="searchResult__title">{title}</div>
                         <div className="searchResult__metadata">{releaseDate.slice(0, 4)}</div>
                     </div>
                     <div className="clips-container">
-                        <img src={trailer?.[index] ? `${YT_IMG}/${trailer[index].key}/0.jpg` : null} />
-                        <img src={clip?.[index] ? `${YT_IMG}/${clip[index].key}/0.jpg` : null} />
+                        <span>
+                            <img src={trailer?.[index] ? `${YT_IMG}/${trailer[index].key}/0.jpg` : null} />
+                            {trailer?.[index] ? trailer[0].name : ""}
+                        </span>
+                        <span>
+                            <img src={clip?.[index] ? `${YT_IMG}/${clip[index].key}/0.jpg` : null} />
+                            {clip?.[index] ? clip[0].name : ""}
+                        </span>
                     </div>
-                </>
-               
+                </div>
+
             )
         } else {
             return (
