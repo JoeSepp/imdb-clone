@@ -10,10 +10,11 @@ function NavSearchBar() {
 
     const [searchType, setSearchType] = useState("multi")
     const [searchTypeText, setSearchTypeText] = useState("All")
-    const [databaseData, setDatabaseData] = useState([{}])
+    const [databaseData, setDatabaseData] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [isFocused, setIsFocused] = useState(false)
     const [searchedValue, setSearchedValue] = useState("")
+    const [videoTrailers, setVideoTrailers] = useState([{}])
 
     const options = [
         {
@@ -49,12 +50,41 @@ function NavSearchBar() {
     };
 
     async function searchDB(inputText) {
-        const response = fetch(`https://api.themoviedb.org/3/search/${searchType}?query=${inputText}&include_adult=false&language=en-US&page=1'`, APIoptions)
+
+        let firstResult;
+
+        const response = await fetch(`https://api.themoviedb.org/3/search/${searchType}?query=${inputText}&include_adult=false&language=en-US&page=1'`, APIoptions)
             .then(res => res.json())
-            .then(res => setDatabaseData(res.results.slice(0, 8)))
-        setTimeout(() => {
-            setIsLoading(false)
-        }, 1000)
+            .then(res => {
+                if (res) {
+                    setDatabaseData(res.results.slice(0, 8));
+                    firstResult = res.results[0]
+                }
+            })
+
+
+
+        if (firstResult) {
+            const videoResponse = await fetch(`https://api.themoviedb.org/3/movie/${firstResult.id}/videos?language=en-US`, APIoptions)
+                .then(res => res.json())
+                .then(res => {
+                    if (res && res.results.length > 0) {
+                        let tempArr = []
+                        res.results.map((vid) => {
+                            if (vid.official === true && vid.site === "YouTube") {
+                                tempArr.push(vid)
+                            }
+                        })
+
+                        setVideoTrailers(tempArr)
+
+                    }
+                })
+                .catch(err => console.error(err));
+        }
+
+
+        setIsLoading(false)
     }
 
     useEffect(() => {
@@ -129,14 +159,14 @@ function NavSearchBar() {
                         <div className="autosuggest_suggestions-container" role="listbox">
                             <ul className="suggestions_results-list">
                                 {!isLoading && isFocused &&
-                                    databaseData.map((result) => {
+                                    databaseData.map((result, index) => {
                                         return (<li role="option" className={`suggestions__result suggestions__result-${result.id}`} key={result.id}>
                                             <div className="searchResult--image">
                                                 {result.poster_path ? <img src={`https://media.themoviedb.org/t/p/w300_and_h450_bestv2/${result.poster_path}`} key={`imgId-${result.id}`} /> : <img src={`https://media.themoviedb.org/t/p/w300_and_h450_bestv2/${result.profile_path}`} />}
                                             </div>
                                             {(result.media_type === "movie" || searchType === "movie") &&
                                                 <Link to={`/${result.media_type ? result.media_type : searchType}/${result.id}`} style={{ textDecoration: "none", color: "white" }}>
-                                                    <SearchResultComponent  title={result.title} releaseDate={result.release_date} searchType={result.media_type ? result.media_type : searchType}/>
+                                                    <SearchResultComponent title={result.title} releaseDate={result.release_date} searchType={result.media_type ? result.media_type : searchType} trailers={videoTrailers} index={index} />
                                                 </Link>}
                                             {(result.media_type === "tv" || searchType === "tv") &&
                                                 <Link to={`/tv/${result.id}`} style={{ textDecoration: "none", color: "white" }}>
@@ -144,7 +174,7 @@ function NavSearchBar() {
                                                 </Link>}
                                             {(result.media_type === "person" || searchType === "person") &&
                                                 <Link to={`/person/${result.id}`} style={{ textDecoration: "none", color: "white" }}>
-                                                    <SearchResultComponent title={result.name} searchType={result.media_type ? result.media_type : searchType} knownForDepartment={result.known_for_department}/>
+                                                    <SearchResultComponent title={result.name} searchType={result.media_type ? result.media_type : searchType} knownForDepartment={result.known_for_department} />
                                                 </Link>}
                                         </li>
                                         )
