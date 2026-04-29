@@ -1,6 +1,6 @@
 import SearchDropdown from "./SearchDropdown.jsx"
 import { useState, useEffect } from "react"
-import FoundMovieComponent from "./FoundMovieComponent.jsx";
+import SearchResultComponent from "./FoundMovieComponent.jsx";
 import "../../Styles/Header/SearchBar.css"
 import LoadingComponent from "../LoadingComponent.jsx"
 import { Link, Form, data } from "react-router-dom";
@@ -136,24 +136,15 @@ function NavSearchBar() {
                                             </div>
                                             {(result.media_type === "movie" || searchType === "movie") &&
                                                 <Link to={`/${result.media_type ? result.media_type : searchType}/${result.id}`} style={{ textDecoration: "none", color: "white" }}>
-                                                    <div className="searchResult--info__container">
-                                                        <div className="searchResult__title">{result.title}</div>
-                                                        <div className="searchResult__metadata">{result.release_date.slice(0, 4)}</div>
-                                                    </div>
+                                                    <SearchResultComponent  title={result.title} releaseDate={result.release_date} searchType={result.media_type ? result.media_type : searchType}/>
                                                 </Link>}
                                             {(result.media_type === "tv" || searchType === "tv") &&
                                                 <Link to={`/tv/${result.id}`} style={{ textDecoration: "none", color: "white" }}>
-                                                    <div className="searchResult--info__container">
-                                                        <div className="searchResult__title">{result.name}</div>
-                                                        <div className="searchResult__metadata">{result.first_air_date.slice(0, 4)}</div>
-                                                    </div>
+                                                    <SearchResultComponent title={result.name} releaseDate={result.first_air_date} searchType={result.media_type ? result.media_type : searchType}/>
                                                 </Link>}
                                             {(result.media_type === "person" || searchType === "person") &&
                                                 <Link to={`/person/${result.id}`} style={{ textDecoration: "none", color: "white" }}>
-                                                    <div className="searchResult--info__container">
-                                                        <div className="searchResult__title">{result.name}</div>
-                                                        <div className="searchResult__metadata">{result.known_for_department}</div>
-                                                    </div>
+                                                    <SearchResultComponent title={result.name} searchType={result.media_type ? result.media_type : searchType} knownForDepartment={result.known_for_department}/>
                                                 </Link>}
                                         </li>
                                         )

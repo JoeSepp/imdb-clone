@@ -2,23 +2,39 @@ import "../../Styles/Header/FoundMovieComponent.css"
 import { Link, NavLink, useLocation } from "react-router-dom"
 import { useState, useEffect, useContext } from "react";
 
-function FoundMovieComponent(props) {
+function SearchResultComponent(props) {
 
-    const { image, title, releaseDate, id, mediaType } = props
+    const { title, releaseDate, searchType, knownForDepartment} = props
+    const [isLoading, setIsLoading] = useState(true)
 
-    return (
-        <Link to={`/${mediaType}/${id}`}>
-            <div className="search-bar-movie-expanded">
-                <img src={image} />
-                <div className="search-bar-movie-expanded-data">
-                    <span className="expanded-movie-header">{title}</span>
-                    <span className="expanded-movie-date">{releaseDate&& releaseDate.slice(0,4)}</span>
-                </div>
+    if (searchType === "movie") {
+        return (
+            <div className="searchResult--info__container">
+                <div className="searchResult__title">{title}</div>
+                <div className="searchResult__metadata">{releaseDate.slice(0, 4)}</div>
             </div>
-        </Link>
+        )
+    } else if (searchType === "tv") {
+        return (
+            <div className="searchResult--info__container">
+                <div className="searchResult__title">{title}</div>
+                <div className="searchResult__metadata">{releaseDate.slice(0, 4)}</div>
+            </div>
+        )
+    } else if (searchType === "person") {
+        return (
+            <div className="searchResult--info__container">
+                <div className="searchResult__title">{title}</div>
+                <div className="searchResult__metadata">{knownForDepartment}</div>
+            </div>
+        )
+    } else {
+        return (
+            <></>
+        )
+    }
 
-    )
 }
 
 
-export default FoundMovieComponent
+export default SearchResultComponent
