@@ -176,7 +176,7 @@ function NavSearchBar() {
                                                 releaseDate: r.release_date,
                                                 searchType: type,
                                                 trailers: videoTrailers,
-                                                index                                                                                 
+                                                index
                                             };
                                         }
 
@@ -198,27 +198,63 @@ function NavSearchBar() {
                                         }
 
                                         return (
-                                            <li
-                                                role="option"
-                                                className={`suggestions__result suggestions__result-${index}`}
-                                                key={r.id}
-                                            >
-                                                <div className="searchResult--image">
-                                                    <img src={imageUrl} alt={r.name || r.title} />
-                                                </div>
-
-                                                <Link
-                                                    to={linkPath}
-                                                    style={{textDecoration: "none", color:"white"}}
+                                            <>
+                                                <li
+                                                    role="option"
+                                                    className={`suggestions__result suggestions__result-${index}`}
+                                                    key={r.id}
                                                 >
+                                                    <div className="searchResult--image">
+                                                        <img src={imageUrl} alt={r.name || r.title} />
+                                                    </div>
 
-                                                   <SearchResultComponent {...componentProps} />
+                                                    <Link
+                                                        to={linkPath}
+                                                        style={{ textDecoration: "none", color: "white" }}
+                                                    >
 
-                                                </Link>
-                                            </li>
+                                                        <SearchResultComponent {...componentProps} />
+
+                                                    </Link>
+                                                </li>
+
+                                                {/*DISPLAY TRAILERS IF MOVIE IS ON INDEX 0*/}
+                                                <div style={{ display: "flex", width: "100%" }}>
+                                                    {index === 0 && videoTrailers?.[0]?.key ?
+
+                                                        <li role="option"
+                                                            className={`suggestions__result suggestions__result-${index} suggestions__result--clips`}
+                                                            key={videoTrailers[0].key}>
+                                                            <Link reloadDocument to={`/v/${videoTrailers[0].key}`} style={{ textDecoration: "none", color: "white" }}>
+                                                                <div className="suggestion-result--clip_container">
+                                                                    <span>
+                                                                        <img src={`https://img.youtube.com/vi/${videoTrailers[0].key}/0.jpg`} />
+                                                                        {videoTrailers[0].type}
+                                                                    </span>
+                                                                </div>
+                                                            </Link>
+                                                        </li>
+                                                        : <></>}
+                                                    {index === 0 && videoTrailers?.[1]?.key ?
+
+                                                        <li role="option"
+                                                            className={`suggestions__result suggestions__result-${index} suggestions__result--clips`}
+                                                            key={videoTrailers[1].key}>
+                                                            <Link to={`/v/${videoTrailers[1].key}`} style={{ textDecoration: "none", color: "white" }}>
+                                                                <div className="suggestion-result--clip_container">
+                                                                    <span>
+                                                                        {<img src={`https://img.youtube.com/vi/${videoTrailers[1].key}/0.jpg`} />}
+                                                                        {videoTrailers[1].type}
+                                                                    </span>
+                                                                </div>
+                                                            </Link>
+                                                        </li>
+                                                        : <></>}
+                                                </div>
+                                            </>
 
                                         )
-                               
+
                                     })
                                 }
                             </ul>
@@ -229,8 +265,8 @@ function NavSearchBar() {
                 <button className="suggestion-search-button">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" className="ipc-icon ipc-icon--magnify" viewBox="0 0 24 24" fill="currentColor" role="presentation"><path fill="none" d="M0 0h24v24H0V0z"></path><path d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path></svg>
                 </button>
-            </Form>
-        </div>
+            </Form >
+        </div >
     )
 
 }
@@ -243,8 +279,6 @@ export const formSubmitAction = async ({ request }) => {
         searchQuery: data.get('movie-finder'),
         searchType: data.get('s'),
     }
-
-    console.log(submission)
 }
 
 export default NavSearchBar

@@ -13,7 +13,7 @@
     margin-left: 2rem;
 }
 
-.clips-container>span {
+.clip-container--video {
     display: flex;
     flex-direction: column;
 
@@ -27,12 +27,12 @@
     transition: 200ms;
 }
 
-.clips-container>span:hover {
+.clip-container--video:hover {
     color: white;
     font-size: 0.92rem;
 }
 
-.clips-container>span>img {
+.clip-container--video>img {
     max-width: 200px;
 
     border-radius: 12px;

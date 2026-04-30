@@ -12,20 +12,7 @@ import featuredTodayData from "../Data/featuredTodayData.js"
 import exploreData from "../Data/exploreData.js"
 
 
-/*  async function getMovie() {
-       const response = fetch("https://www.omdbapi.com/?i=tt3896198&apikey=4ef57d82");
-       const data = (await response).json();
-
-       return data;
-   }
-
-   const currentMovie = getMovie();
-
-   console.log(currentMovie) */
-
-
 function Main() {
-
 
     return (
         <main>

@@ -9,6 +9,7 @@ import { BrowserRouter, Route, createBrowserRouter, createRoutesFromElements, Ro
 import './App.css'
 import RootLayout from './Pages/RootLayout.jsx'
 import {formSubmitAction} from './Components/navbar/NavSearchBar.jsx'
+import VideoPage from './Pages/VideoPage.jsx'
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -19,6 +20,7 @@ const router = createBrowserRouter(
       <Route path='/account/sign-in' element={<LoginPage />} />
       <Route path='/search/:pageNumber/:searchType/:searchQuery'/>
       <Route path='/test/' element={<TestPage/>} action={formSubmitAction}/>
+      <Route path='/v/:videoKey/' element={<VideoPage />}/>
     </Route>
   )
 )
