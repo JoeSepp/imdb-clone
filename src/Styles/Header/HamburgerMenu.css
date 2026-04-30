@@ -11,15 +11,15 @@
     max-height: 33px;
 }
 
-.database-logo-div >a {
+.database-logo-div>a {
     position: relative;
 }
 
-.database-logo-div > a > img{
+.database-logo-div>a>img {
     border-radius: 3px;
 }
 
-.hamburger-menu--mobile{
+.hamburger-menu--mobile {
     display: none !important;
 }
 
@@ -36,10 +36,10 @@
     transition: background-color 150ms;
 }
 
-.hamburger-menu_button{
+.hamburger-menu_button {
     display: flex;
     padding: 0px 16px;
-    
+
 
     align-items: center;
     align-content: center;
@@ -80,18 +80,17 @@
 }
 
 .hamburger-menu-expanded.display {
-    display: flex;
-    animation: showMenu;
+    animation: showMenuHorizontal;
     animation-timing-function: ease-in;
     animation-fill-mode: forwards;
     animation-duration: 340ms;
 }
 
 .hamburger-menu-expanded.hide {
-    animation: hideMenu;
+    animation: hideMenuHorizontal;
     animation-timing-function: ease-out;
     animation-fill-mode: forwards;
-    animation-duration: 200ms;
+    animation-duration: 340ms;
 }
 
 
@@ -175,7 +174,7 @@
 
 /* ANIMACE */
 
-@keyframes showMenu {
+@keyframes showMenuHorizontal {
     0% {
         transform: translateY(-100%)
     }
@@ -185,7 +184,7 @@
     }
 }
 
-@keyframes hideMenu {
+@keyframes hideMenuHorizontal {
     0% {
         transform: translateY(0)
     }
@@ -195,57 +194,116 @@
     }
 }
 
-@media (max-width: 1400px) and (min-width: 800px) {
+@keyframes showMenuVertical {
+    0% {
+        transform: translateX(-100%)
+    }
 
+    100% {
+        transform: translateX(0)
+    }
+}
 
-    .hbm_top-flex-box {
-        display: flex;
-        gap: 80vw;
+@keyframes hideMenuVertical {
+    0% {
+        transform: translateX(0)
+    }
+
+    100% {
+        transform: translateX(-100%)
     }
 }
 
 @media (max-width: 1080px) {
-    .hamburger-menu{
-        display: none;
-    }
-
-    .hamburger-menu--mobile{
-        display: flex !important;
-    }
-    
-}
-
-@media (max-width: 800px) {
     .hamburger-menu {
         display: none;
     }
 
-    .hbm_top-flex-box {
-        display: flex;
-        gap: 55vw;
+    .hamburger-menu--mobile {
+        display: flex !important;
     }
 
-    .category-list>h2 {
-        font-size: 1.2rem;
+    .hbm_top-flex-box {
+        display: flex;
+
+        margin: 8px 0px;
+        gap: 0;
+        justify-content: space-between;
+    }
+
+    .hbm_top-flex-box>a>img {
+        display: none;
+    }
+
+    .hbm_top-flex-box>svg {
+        background-color: transparent;
+        color: white;
+    }
+
+    .hbm_top-flex-box>svg:hover {
+        background-color: rgba(255, 255, 255, 0.16);
+        color: white;
+    }
+
+    .menu-container {
+        width: 100%;
+        padding: 0px 15px;
+    }
+
+    .category-navbar-container {
+        align-items: center;
     }
 
     .category-navbar-container>svg {
-        margin-top: 3px;
+        color: rgba(255, 255, 255, 0.46);
     }
 
-    .category-list>ul>li {
-        font-size: 1rem;
+    .hamburger-menu-expanded {
+        width: calc(100vw - 60%);
+        min-width: 50vw;
+        flex-direction: row;
+
+        right: auto;
+        left: 0;
+
+        margin: 0;
+        padding: 0;
+
+        align-items: start;
+        justify-content: start;
+
     }
 
     .category-grid-container {
         display: flex;
         flex-direction: column;
 
-        align-items: center;
+        padding: 0;
+        margin: 0;
     }
 
-    .hamburger-menu-expanded {
-        overflow-y: scroll;
-        overflow-x: hidden;
+    .category-list>h2 {
+        cursor: pointer;
+        font-size: 1.2rem;
+        font-weight: 400;
     }
+
+    .category-list>ul {
+        display: none;
+    }
+
+    .hamburger-menu-expanded.display {
+        animation: showMenuVertical;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
+        animation-duration: 340ms;
+    }
+
+    .hamburger-menu-expanded.hide {
+        animation: hideMenuVertical;
+        animation-timing-function: ease-in;
+        animation-fill-mode: forwards;
+        animation-duration: 340ms;
+    }
+
 }

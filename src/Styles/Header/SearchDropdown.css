@@ -253,6 +253,12 @@
     }
 }
 
+@media (max-width: 1080px) {
+    .category-selector-button{
+        display: none;
+    }
+}
+
 @media (max-width: 600px) {
     .search-selector {
         display: none;
