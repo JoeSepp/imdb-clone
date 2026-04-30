@@ -19,6 +19,10 @@
     border-radius: 3px;
 }
 
+.hamburger-menu--mobile{
+    display: none !important;
+}
+
 .hamburger-menu {
     display: flex;
     background-color: transparent;
@@ -198,6 +202,17 @@
         display: flex;
         gap: 80vw;
     }
+}
+
+@media (max-width: 1080px) {
+    .hamburger-menu{
+        display: none;
+    }
+
+    .hamburger-menu--mobile{
+        display: flex !important;
+    }
+    
 }
 
 @media (max-width: 800px) {
