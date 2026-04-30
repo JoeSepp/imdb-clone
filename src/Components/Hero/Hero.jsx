@@ -31,7 +31,7 @@ function Hero(props) {
                     <Slider asNavFor={nav2}
                         ref={slider => (sliderRef1 = slider)}
                         className="hero-content-slider"
-                        autoplay={false}
+                        autoplay={true}
                         nextArrow={<NextArrow />}
                         prevArrow={<PrevArrow />}
                         autoplaySpeed={5000}
